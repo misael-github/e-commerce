@@ -72,11 +72,12 @@
   .nav {
     height: 25px;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
-    font-family: "Poiret One", "cursive";
-    padding: 20px 30px 0 30px;
-    margin-bottom: 20px;
+    font-family: 'Open Sans', sans-serif;
+    /* padding: 20px 30px 0 30px; */
+    margin-bottom: 15px;
+    margin-top: 15px;
   }
   .logo {
     color: black;
@@ -110,7 +111,8 @@
     transition: 0.5s;
   }
   .checkbtn-icon {
-    font-size: 30px;
+    font-size: 22px;
+    font-weight: 600;
     color: white;
     float: right;
     margin-top: 25px;
@@ -152,7 +154,7 @@
       transition: all 0.5s;
       padding-bottom: 70px;
       z-index: 1;
-      
+      background-color: #fff;
     }
   
     .nav_item:active,

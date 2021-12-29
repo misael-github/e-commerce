@@ -1,0 +1,10 @@
+.container-banner{
+  /* height: 400px; */
+}
+
+.img-banner{
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+    /* border-radius: 5px; */
+}

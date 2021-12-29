@@ -22,7 +22,7 @@
             <a href="../contact.html" className="nav_item">{props.category}</a>
           </li>
         </ul>
-        <label for="check" class="checkbtn-icon"><i class=" ">Categorias</i><i class="fas fa-times icono-x"></i> </label>
+        <label for="check" className="checkbtn-icon"><i class=" ">Categorias</i><i class="fas fa-times icono-x"></i> </label>
 
       </nav>
     //     <nav className="nav">
