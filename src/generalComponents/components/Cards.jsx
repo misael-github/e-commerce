@@ -1,6 +1,6 @@
 import "../styles/cards.css";
 import auriculares from "../../assets/auricular.jpg";
-const Card = () => {
+const Card = (props) => {
   return (
     <div className="container-card">
       <div className="main">
@@ -12,11 +12,11 @@ const Card = () => {
         <div className="line"></div>
         
         <div className="container__title-and-price">
-          <h1>BEATS</h1>
-          <p className="price">$30</p>
+          <h1>{props.name}</h1>
+          <p className="price">{props.price}</p>
         </div>
     
-             <h3 className="ubication">Ubicación: San Luis</h3>
+             <h3 className="ubication">Ubicación: {props.ubication}</h3>
         
         <div className="container-buttons-and-cart">
           <div className="button-more"> MORE</div>
