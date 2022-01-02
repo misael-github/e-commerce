@@ -1,28 +1,28 @@
   import "../styles/nav.css"
   
-  const nav = (props) => {
+  const Nav = (props) => {
       return (
-        <nav class="nav">
+        <nav className="nav">
 
         <input type="checkbox" name="" id="check" />
 
-        <label for="" class="logo "></label>
+        <label for="" className="logo "></label>
 
-        <ul class="list">
-          <li class="list__items">
+        <ul className="list">
+          <li className="list__items">
             <a href="../index.html" className="nav_item">{props.category}</a>
           </li>
-          <li class="list__items">
+          <li className="list__items">
             <a href="../portfolio.html" className="nav_item">{props.category}</a>
           </li>
-          <li class="list__items">
+          <li className="list__items">
             <a href="../servicios.html" className="nav_item">{props.category}</a>
           </li>
-          <li class="list__items">
+          <li className="list__items">
             <a href="../contact.html" className="nav_item">{props.category}</a>
           </li>
         </ul>
-        <label for="check" className="checkbtn-icon"><i class=" ">Categorias</i><i class="fas fa-times icono-x"></i> </label>
+        <label for="check" className="checkbtn-icon"><i className=" category-icon">{props.icon}</i><i className="fas fa-times icono-x"></i> </label>
 
       </nav>
     //     <nav className="nav">
@@ -48,5 +48,5 @@
     //  </nav>
       )
   }
-  export default nav
+  export default Nav
   

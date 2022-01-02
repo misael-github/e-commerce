@@ -1,0 +1,47 @@
+[
+
+    {
+        "id":1,
+        "title":"Lavarropas",
+        "price":"30000",
+        "img":"",
+        "ubication":"San Luis",
+        "description":"lavarropas lindo"
+    },
+    
+    {
+        "id":2,
+        "title":"Hilux",
+        "price":"3.000.000",
+        "img":"",
+        "ubication":"Entre rios",
+         "description":"auto lindo"
+    },
+    
+    {
+        "id":3,
+        "title":"Guitarra",
+        "price":"15000",
+        "img":"",
+        "ubication":"Buenos Aires",
+        "description":"guitarra lindo"
+    },
+    
+    {
+        "id":4,
+        "title":"Sillon",
+        "price":"60000",
+        "img":"",
+        "ubication":"Mendoza",
+        "description":"sillon lindo"
+    },
+    
+    {
+        "id":5,
+        "title":"Compu",
+        "price":"150000",
+        "img":"",
+        "ubication":"San Luis",
+        "description":"compu lindo"
+    }
+]
