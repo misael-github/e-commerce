@@ -13,7 +13,7 @@ code {
 }
 .container-section-products{
   max-width: 95vw;
-  padding: 0px 40px ;
+  /* padding: 0px 20px ; */
   margin: auto;
   display: flex;
   align-items: center;

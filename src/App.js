@@ -7,13 +7,19 @@ import Footer from "./generalComponents/components/Footer";
 import Banner from "./home/components/Banner";
 // import SectionPoducts from "./home/components/SectionProducts";
 import "./home/styles/index.css";
-import lavarropas from "./assets/lavarropas.jpg";
+// import lavarropas from "./assets/lavarropas.jpg";
+import auricular from "./assets/auricular.jpg";
+// import escritorio from "./assets/escritorio.jpg";
+// import sillon from "./assets/sillin.jfif";
+// import hilux from "./assets/hilux.jpg";
+
 import Cart from "./generalComponents/components/Cart";
 // import Search from "./generalComponents/components/Search";
 import Card from "./generalComponents/components/Cards";
 import jsonProducts from "../src/products.json";
 
 function App() {
+  
   return (
     <div className="App">
       <header className="header">
@@ -27,10 +33,10 @@ function App() {
 
         {jsonProducts.map((product) => (
           <Card
-            name={product.name}
+            name={product.title}
             price={product.price}
             ubication={product.ubication}
-            img={lavarropas}
+            img={auricular}
             description={product.description}
           />
         ))}

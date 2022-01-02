@@ -10,7 +10,7 @@
     color: #42414e;
 }
 .main{
-    height: 400px;
+    height:400px;
     width: 300px;
     background-color: #fff;
     box-shadow: 0px 0px 12px -2px #dadada;
@@ -34,14 +34,19 @@
     flex-direction: column;
 }
 .container-img{
-    width: 70%;
+    /* width: 70%; */
+    /* display: flex; */
     margin: auto;
 }
+
 img{
     width: 200px;
     height: 200px;
     margin: auto;
     object-fit: contain;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    display: flex;
 }
 h1{
     margin: 10px 0 0 0;
@@ -67,15 +72,16 @@ h3{
 .ubication{
     margin: 0;
     padding-top: 50px;
-    margin-left: 30px;
+    margin-left: 15px;
 }
 .container-buttons-and-cart {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     align-items: center;
-
     margin-top: 10px;
     font-size: 20px;
+    width: 90%;
+    margin: auto;
 }
 .add-to-card{
     display: flex;
