@@ -1,11 +1,11 @@
-.container-banner{
-  /* height: 400px; */
-}
+/* .container-banner{
+  height: 400px;
+} */
 
 .img-banner{
     width: 100%;
     height: 100%;
-    object-fit: scale-down;
+    /* object-fit: scale-down; */
     max-height:500px ;
     /* border-radius: 5px; */
 }

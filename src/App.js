@@ -1,47 +1,32 @@
-// import './App.css';
-// import Card from "./generalComponents/components/Cards";
-// import Layaut from "./generalComponents/components/Layaut";
-import Header from "./home/components/Header";
-import Nav from "./generalComponents/components/Nav";
-import Footer from "./generalComponents/components/Footer";
-import Banner from "./home/components/Banner";
-// import SectionPoducts from "./home/components/SectionProducts";
-import "./home/styles/index.css";
-// import lavarropas from "./assets/lavarropas.jpg";
-import auricular from "./assets/auricular.jpg";
-// import escritorio from "./assets/escritorio.jpg";
-// import sillon from "./assets/sillin.jfif";
-// import hilux from "./assets/hilux.jpg";
-
 import Cart from "./generalComponents/components/Cart";
-// import Search from "./generalComponents/components/Search";
-import Card from "./generalComponents/components/Cards";
-import jsonProducts from "../src/products.json";
+import Footer from "../src/generalComponents/components/Footer";
+import { BrowserRouter, Route, Routes, NavLink } from "react-router-dom";
+import HomePage from "./pages/home/Home";
+import NotFound from "./pages/notFound/NotFound";
+import LoginRegister from "./pages/login-register/LoginRegister";
+import Vender from "./pages/vender/Vender";
+import User from "./pages/user/User";
+import Users from "./pages/users/Users";
 
 function App() {
-  
   return (
     <div className="App">
-      <header className="header">
-        <Header></Header>
-        <Nav category="Vehiculos" icon="Categorias" />
-      </header>
-      <Banner></Banner>
-
-        <h3 className="section-products__title">Nuevas recomendaciones</h3>
-      <section className="container-section-products">
-
-        {jsonProducts.map((product) => (
-          <Card
-            name={product.title}
-            price={product.price}
-            ubication={product.ubication}
-            img={auricular}
-            description={product.description}
+      <BrowserRouter>
+        <Routes>
+          <Route exact path="/" element={<HomePage></HomePage>} />
+          <Route path="/cart" element={<Cart></Cart>} />
+          <Route path="/vender" element={<Vender></Vender>} />
+          <Route
+            path="/login-register"
+            element={<LoginRegister></LoginRegister>}
           />
-        ))}
-      </section>
-      <Cart></Cart>
+          <Route path="/users" element={<Users></Users>}></Route>
+          <Route path="/users/:userId" element={<User></User>}></Route>
+          <Route path="*" element={<NotFound></NotFound>} />
+        </Routes>
+      </BrowserRouter>
+
+      {/* <Cart></Cart> */}
       <footer className="footer">
         <Footer></Footer>
       </footer>
