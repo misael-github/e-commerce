@@ -3,7 +3,7 @@ import Footer from "../src/generalComponents/components/Footer";
 import { BrowserRouter, Route, Routes, NavLink } from "react-router-dom";
 import HomePage from "./pages/home/Home";
 import NotFound from "./pages/notFound/NotFound";
-import LoginRegister from "./pages/login-register/LoginRegister";
+import Login from "./pages/login/Login";
 import Vender from "./pages/vender/Vender";
 import User from "./pages/user/User";
 import Users from "./pages/users/Users";
@@ -13,16 +13,16 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route exact path="/" element={<HomePage></HomePage>} />
-          <Route path="/cart" element={<Cart></Cart>} />
-          <Route path="/vender" element={<Vender></Vender>} />
+          <Route path="/" element={<HomePage/>} />
+          <Route path="/cart" element={<Cart/>} />
+          <Route path="/vender" element={<Vender/>} />
           <Route
-            path="/login-register"
-            element={<LoginRegister></LoginRegister>}
+            path="/login"
+            element={<Login/>}
           />
-          <Route path="/users" element={<Users></Users>}></Route>
-          <Route path="/users/:userId" element={<User></User>}></Route>
-          <Route path="*" element={<NotFound></NotFound>} />
+          <Route path="/users" element={<Users/>}></Route>
+          <Route path="/users/:userId" element={<User/>}></Route>
+          <Route path="*" element={<NotFound/>} />
         </Routes>
       </BrowserRouter>
 
