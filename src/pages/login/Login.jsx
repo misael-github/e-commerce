@@ -1,6 +1,9 @@
 import { useState } from "react";
 import {Link} from "react-router-dom"
+import Button from "../../generalComponents/components/Button";
 import db from "../../db"
+import "./login.css"
+import Input from "../../generalComponents/components/Input";
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -21,18 +24,21 @@ const Login = () => {
   };
 
   return (
-    <div className="container-form">
+    <div className="container-form__login">
+        <h2>¡Hola! Ingresá tu e-mail y contraseña</h2>
       <form method="" onSubmit={login} className="form">
         <div className="fieldset">
-          <label className="fieldset-label">login</label>
-          <input className="fieldset-input"  name="email" onChange={handleInputChange} type="text" />
+          <label className="fieldset-label">Email</label>
+          {/* <input className="fieldset-input"  name="email" onChange={handleInputChange} type="text" /> */}
+        <Input type="text" className="fieldset-input" name="email" onChange={handleInputChange}></Input>
         </div>
         <div className="fieldset">
-          <label className="fieldset-label">contraseña</label>
-          <input className="fieldset-input" name="password" type="password" onChange={handleInputChange} />
+          <label className="fieldset-label">Contraseña</label>
+          {/* <input className="fieldset-input" name="password" type="password" onChange={handleInputChange} /> */}
+          <Input type="password" className="fieldset-input" name="password" onChange={handleInputChange}></Input>
         </div>
-        <button type="submit">Enviar</button>
-        <Link to ="/registrse">Recuperar clave | Registrarse</Link>
+        <Button title="Enviar"></Button>
+        <Link to ="/usuario_registro"><Button title="Crear cuenta"></Button></Link>
       </form>
     </div>
   );

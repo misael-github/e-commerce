@@ -7,6 +7,7 @@ import Login from "./pages/login/Login";
 import Vender from "./pages/vender/Vender";
 import User from "./pages/user/User";
 import Users from "./pages/users/Users";
+import Registrarse from "./pages/usuario-registro/registrarse";
 
 function App() {
   return (
@@ -20,7 +21,9 @@ function App() {
             path="/login"
             element={<Login/>}
           />
+          <Route path="/usuario_registro" element={<Registrarse/>}></Route>
           <Route path="/users" element={<Users/>}></Route>
+          <Route path="/users/:userId" element={<User/>}></Route>
           <Route path="/users/:userId" element={<User/>}></Route>
           <Route path="*" element={<NotFound/>} />
         </Routes>
