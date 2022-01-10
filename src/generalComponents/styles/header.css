@@ -1,47 +1,79 @@
-.container-header{
+ @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto+Slab:wght@600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+.nav-header {
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  height: 80px;
+
+}
+.logo{
+    font-size: 22px;
+    font-weight: 600;
+    
+}
+
+.ul{
+  /* display: none;
+  width:100%; */
+  /* height:50vh; */
+  /* background-color:#AEFEFF;
+  flex-direction:column;
+  align-items:center;
+  justify-content: space-around;
+  z-index:1; */
+}
+.header-list{
+  display: none;
+  padding: 0;
+}
+ul {
+    list-style: none;
+}
+.icon-burger {
+  color: rgb(104 96 96);
+  cursor: pointer;
+  font-size: 30px;
+  font-weight: 500;
+}
+.input-search{
+    /* display: block; */
+    width: 70%;
+    padding: 10px;
+    border-radius: 5px;
+    border: solid rgb(193 191 191) 0.5px;
+    height: 32px;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+@media (min-width: 576px) {
+
+
+  .ul-items {
+    display: flex;
+    margin: 0 10px;
+  }
+
+  /* nav{
+      margin-left: 50px;
+  } */
+}
+@media (min-width: 768px) {
+  .icon-burger{
+      display: none;
+  }
+  .header-list{
     display: flex;
     justify-content: space-between;
-    padding: 20px 10px;
-    background-color: rgba(0,47,52,.03);
-}
+  }
+  .input-search{
+    height: 47px;
+    width: 60%;
+  }
+  .logo{
+    font-size: 32px;
+  }
 
-.container-header__logo{
-    margin: 0;
-    font-weight: 700;
-    font-size: 26px;
-      /* font-family: 'Open Sans', sans-serif; */
-}
-.container-header__btn-login{
-    background: none;
-    border: none
-}
-.container-header__login--ingresar{
-    color: #002f34;
-    text-decoration: underline #002f34;
-    font-size: 16px;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    cursor: pointer;
-
-}
-
-  /* .container-header__btn-login{
-        display: none;
-    } */
-
-@media (min-width:570px){
-    .container-header{
-        justify-content: space-evenly;
-    }
-    .container-header__logo{
-        font-size: 34px;
-    }
-    .container-header__login--ingresar{
-        font-size: 24px;
-    }
- /* .container-header__btn-login{
-        display: block;
-    }
-   */
- 
 }

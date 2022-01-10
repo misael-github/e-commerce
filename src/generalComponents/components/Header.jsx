@@ -1,32 +1,31 @@
 import "../styles/header.css";
-import Search from "./Search";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
-// import Nav from "../../generalComponents/components/Nav"
+// import { BiMenu } from "react-icons/bi";
+import Button from "./Button";
 // import { useState } from "react"
 
 const Header = () => {
+
+  const openMenu = () => {
+    const ul = document.querySelector("ul")
+    ul.classList.toggle = "list"
+    console.log(ul)
+  }
+
   return (
     <header className="container-header">
-      <h3 className="container-header__logo">Olx</h3>
-      <Search></Search>
-      <button className="container-header__btn-login">
-        <NavLink
-        // no anda
-          to="/login-register" 
-          className={({ isActive }) =>
-            isActive ? "active" : "container-header__login--ingresar"
-          }
-        >
-          Ingresar
-        </NavLink>
-      </button>
-      <button className="container-header__btn-login">
-        <NavLink to="/vender" className="container-header__login--ingresar">
-          Vender
-        </NavLink>
-      </button>
-      {/* <Nav icon="Menú"></Nav> */}
+      <nav className="nav-header">
+        <di className="logo">
+          <h2> Olx</h2>
+        </di>
+        <input className="input-search" type="text" name="" id="" placeholder="Buscar productos, marcas y mas..."/>
+        <i className="fas fa-bars icon-burger" onClick={openMenu}></i>
+        <ul className="header-list">
+          <Link to="/login"><li><Button title="Ingresar" className="button-ingresar"></Button></li></Link>
+         <li><Button title="Vender" className="button-vender"></Button></li>
+        </ul>
+      </nav>
     </header>
   );
 };
