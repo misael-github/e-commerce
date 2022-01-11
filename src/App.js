@@ -9,6 +9,8 @@ import User from "./pages/user/User";
 import Users from "./pages/users/Users";
 import Registrarse from "./pages/usuario-registro/registrarse";
 import "./App.css"
+import SignUp from "./pages/sign-up/Sign-up";
+
 
 function App() {
   return (
@@ -22,7 +24,7 @@ function App() {
             path="/login"
             element={<Login/>}
           />
-          <Route path="/sign-up" element={<Registrarse/>}></Route>
+          <Route path="/sign-up" element={<SignUp/>}></Route>
           <Route path="/users" element={<Users/>}></Route>
           <Route path="/users/:userId" element={<User/>}></Route>
           <Route path="/users/:userId" element={<User/>}></Route>

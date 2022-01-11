@@ -1,10 +1,18 @@
 .container-form__login{
     max-width: 300px;
-    height: 400px;
-    background-color: rgb(234 234 245);
+    /* height: 487px; */
+    /* background-color: rgb(234 234 245); */
     margin: 30px;
     border-radius: 7px;
     padding: 1rem 2rem;
+}
+
+.container-btn-login{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* align-items: center; */
+    height: 170px;
 }
 @media (min-width:580px){
     .container-form__login{
@@ -16,6 +24,8 @@
 .container-form__login h2{
     text-align: center;
     max-width: 270px;
+    margin-bottom: 50px;
+    color: orange;
 }
 /* .form {
   width: 400px;
@@ -25,9 +35,16 @@
   margin-top: 45px;
 } */
 .fieldset{
-margin-bottom: 20px;
+margin-bottom: 50px;
+display: flex;
+align-items: center;
+}
+.icons-email-password{
+    font-size: 25px;
+    color:orange;
+    margin-right: 10px;
 }
 .fieldset-label{
-    margin-left: 10px;
+    /* margin-left: 10px; */
     font-size: 16px;
 }

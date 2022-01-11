@@ -65,8 +65,9 @@ h1{
     width: 90%;
     margin: auto;
 }
-h3{
-    margin: 0;
+.section-products__title{
+    margin: 50px 0 20px 30px;
+    font-size: 30px;
 }
 
 .ubication{
@@ -100,7 +101,7 @@ h3{
     font-size: 28px;
 }
 .button-more{
-    background-color: #42414e;
+    background-color: #4fbdba;
     color: #fff;
     padding: 5px 15px;
     font-size: 18px;

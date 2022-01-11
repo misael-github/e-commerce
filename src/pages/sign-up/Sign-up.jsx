@@ -1,43 +1,40 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
-import Button from "../../generalComponents/components/Button";
 import db from "../../db";
-import "./login.css";
+
+import "./sign-up.css";
 import Input from "../../generalComponents/components/Input";
+import Button from "../../generalComponents/components/Button";
 
-
-const Login = () => {
-  
-  const history = useNavigate();
-  const [formData, setFormData] = useState({ email: "", password: "" });
-
+const SignUp = () => {
+  const [formData, setFormData] = useState({
+    // firstNameAndLastName: "",
+    password: "",
+    email: "",
+  });
   function handleInputChange(e) {
     const { value, name } = e.target; // capturo el value y la propiedad name
 
     setFormData({ ...formData, [name]: value }); // seteo de la propiedad name con lo que me llega
     // ej email que seria mi key y el valor
-    console.log(formData)
   }
+  console.log(formData);
 
-  const login = async (e) => {
+  const SignUp = async (e) => {
     e.preventDefault();
     // De la db utilizo el la función auth para loguearme y eligo con que metodo(funcion)
     // y le paso 2 parametros en este caso. Si conicide con el usuario que está en la db me loguea
-    try {
-      const user = await db
-        .auth()
-        .signInWithEmailAndPassword(formData.email, formData.password);
-        history("/")
-      
-    } catch (error) {
-      console.log(error)
-    }
-  }
-
+    const user = await db
+      .auth()
+      .createUserWithEmailAndPassword(formData.email, formData.password);
+    console.log(user);
+  };
   return (
     <div className="container-form__login">
-      <h2>¡Hola! Ingresá tu e-mail y contraseña</h2>
-      <form method="" onSubmit={login} className="form">
+      <h2>¡Hola! Creá tu cuenta de Olx</h2>
+      <form method="" onSubmit={SignUp} className="form">
+       
+
         <div className="fieldset">
           <label className="fieldset-label"></label>
           <i class="fas fa-envelope icons-email-password"></i>
@@ -56,19 +53,19 @@ const Login = () => {
             type="password"
             className="fieldset-input"
             name="password"
-            placeholder="Contraseña"
+            placeholder="Crear contraseña"
             onChange={handleInputChange}
           ></Input>
         </div>
         <div className="container-btn-login">
-        <Button title="CONTINUAR" type="submit"></Button>
-        <Link to="/sign-up">
-          <Button title="CREAR CUENTA" ></Button>
-        </Link>
+          <Button title="CREAR CUENTA"></Button>
+          <Link to="/login">
+            <Button title="SIGN-UP"></Button>
+          </Link>
         </div>
       </form>
     </div>
   );
 };
 
-export default Login;
+export default SignUp;

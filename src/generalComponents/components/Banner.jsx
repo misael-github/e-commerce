@@ -1,5 +1,5 @@
 // import imgBanner from "../../assets/banner.jpg"
-import imgElectrodomesticos from "../../assets/electrodomesticosBanner.jpeg"
+import imgElectrodomesticos from "../../assets/electrodomesticosBannerGrande.jpg"
 
 import "../styles/banner.css"
 

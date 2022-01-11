@@ -40,7 +40,7 @@
   }
   .nav_item:active,
   .nav_item:hover {
-    background-color: rgb(156, 154, 154);
+    background-color: #4fbdba;
     color: #fff;
     transition: 0.5s;
   }
