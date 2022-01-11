@@ -3,34 +3,10 @@ import { Link } from "react-router-dom";
 
 // import { BiMenu } from "react-icons/bi";
 import Button from "./Button";
-import { useState } from "react"
+import { useState } from "react";
 
 const Header = () => {
- 
-  const [menu, setMenu] = useState(false)
-  
-
-  
-  // const openMenu = (e) => {
-  //   const ul = document.querySelector(".ul");
-  //   const iconCruz = document.querySelector(".icon-cruz")
-  //   const iconHamburguesa = document.querySelector(".icon-burger")
-
-  //   ul.style = "display:flex";
-  //   iconCruz.style = "display:flex"
-  //   iconHamburguesa.style = "display:none"
-  //   console.log(ul);
-  // };
-
-  // const closeMenu = () => {
-  //   const ul = document.querySelector(".ul");
-  //   const iconCruz = document.querySelector(".icon-cruz")
-  //   const iconHamburguesa = document.querySelector(".icon-burger")
-
-  //   ul.style = "display:none"
-  //  iconCruz.style = "display:none"
-  //  iconHamburguesa.style = "display:flex"
-  // }
+  const [menu, setMenu] = useState(false);
 
   return (
     <header className="container-header">
@@ -45,18 +21,29 @@ const Header = () => {
           id=""
           placeholder="Buscar productos, marcas y mas..."
         />
-        <i className="fas fa-bars icon-burger" style={{display: menu ? "none" : "flex"}} onClick={() => setMenu(true)}></i>
-        <i className="fas fa-times icon-cruz" style={{display: menu ? "flex" : "none"}} onClick={() => setMenu(false)}></i>
-        <ul className=" ul" style={{display: menu ? "flex" : "none"}}>
+        {/* Si menu es true le pone display none sino flex ycada vez que hacen click seteo el valor de menu y
+        asi hago que se vea o no cada icono */}
+        <i
+          className="fas fa-bars icon-burger"
+          style={{ display: menu ? "none" : "flex" }}
+          onClick={() => setMenu(true)}
+        ></i>
+        <i
+          className="fas fa-times icon-cruz"
+          style={{ display: menu ? "flex" : "none" }}
+          onClick={() => setMenu(false)}
+        ></i>
+        {/* Si el menu esta es true el left es 0 sino -100% */}
+        <ul className=" ul" style={{ left: menu ? "0" : "-100%" }}>
           <Link to="/login">
             <li className="list_items">
-              <Button title="Ingresar" className="button-ingresar"></Button>
+              <Button title="INGRESAR" className="button-ingresar"></Button>
             </li>
           </Link>
           <Link to="">
             <li className="list_items">
-            <Button title="Vender" className="button-vender"></Button>
-          </li>
+              <Button title="VENDER" className="button-vender"></Button>
+            </li>
           </Link>
         </ul>
       </nav>
