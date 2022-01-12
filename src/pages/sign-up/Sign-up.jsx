@@ -60,7 +60,7 @@ const SignUp = () => {
         <div className="container-btn-login">
           <Button title="CREAR CUENTA"></Button>
           <Link to="/login">
-            <Button title="SIGN-UP"></Button>
+            <Button title="SIGN-UP"variant="outline"></Button>
           </Link>
         </div>
       </form>

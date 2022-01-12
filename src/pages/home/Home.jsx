@@ -6,6 +6,7 @@ import auricular from "../../assets/auricular.jpg";
 import Card from "../../generalComponents/components/Cards";
 import Nav from "../../generalComponents/components/Nav";
 import "./home.css"
+import { useSelector } from "react-redux";
 
 const HomePage = () => {
   return (

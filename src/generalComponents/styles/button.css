@@ -1,15 +1,4 @@
 button{
-    /* border: none;
-    background-color: #002f34;
-    color: #fff; */
-    /* padding: 10px 20px; */
-    /* border-radius: 5px;
-    min-width:200px ;
-    height: 52px; */
-    /* padding: 10px; */
-    /* border-radius: 10px;
-    font-size: 16px; */
-    /* display: none; */
     width: 100%;
     font-size: 16px;
     background-color: orange;
@@ -21,6 +10,11 @@ button{
     /* margin: 0 1rem; */
     height: 48px;
     color: #fff;
+}
+button.outline{
+   background-color: transparent;
+   color: orange;
+   border: solid 1px orange;
 }
 @media (min-width:949px){
     button{

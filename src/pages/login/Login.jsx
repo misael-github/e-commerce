@@ -4,10 +4,16 @@ import Button from "../../generalComponents/components/Button";
 import db from "../../db";
 import "./login.css";
 import Input from "../../generalComponents/components/Input";
-
+import { useDispatch } from "react-redux";
+import { LoginAction } from "../../actions/userAction";
+import { useSelector } from "react-redux";
 
 const Login = () => {
   
+
+  const user = useSelector((store) => store.user)
+  console.log(user)
+  const distpach = useDispatch()
   const history = useNavigate();
   const [formData, setFormData] = useState({ email: "", password: "" });
 
@@ -23,15 +29,7 @@ const Login = () => {
     e.preventDefault();
     // De la db utilizo el la función auth para loguearme y eligo con que metodo(funcion)
     // y le paso 2 parametros en este caso. Si conicide con el usuario que está en la db me loguea
-    try {
-      const user = await db
-        .auth()
-        .signInWithEmailAndPassword(formData.email, formData.password);
-        history("/")
-      
-    } catch (error) {
-      console.log(error)
-    }
+    distpach(LoginAction(formData)) 
   }
 
   return (
@@ -63,7 +61,7 @@ const Login = () => {
         <div className="container-btn-login">
         <Button title="CONTINUAR" type="submit"></Button>
         <Link to="/sign-up">
-          <Button title="CREAR CUENTA" ></Button>
+          <Button title="CREAR CUENTA" variant="outline" ></Button>
         </Link>
         </div>
       </form>
