@@ -4,9 +4,12 @@ import { Link } from "react-router-dom";
 // import { BiMenu } from "react-icons/bi";
 import Button from "./Button";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+
 
 const Header = () => {
   const [menu, setMenu] = useState(false);
+  const {user} = useSelector((store) => store.user)
 
   return (
     <header className="container-header">
@@ -30,14 +33,14 @@ const Header = () => {
         ></i>
         <i
           className="fas fa-times icon-cruz"
-          style={{ display: menu ? "flex" : "none" }}
+          style={{ display: menu ? "flex" : "none" }}// style recibe un onjeto con los styles
           onClick={() => setMenu(false)}
         ></i>
         {/* Si el menu esta es true el left es 0 sino -100% */}
         <ul className=" ul" style={{ left: menu ? "0" : "-100%" }}>
           <Link to="/login">
             <li className="list_items">
-              <Button title="INGRESAR" className="button-ingresar"></Button>
+              <Button title={user ? "LOG-OUT" : "INGRESAR"} className="button-ingresar"></Button>
             </li>
           </Link>
           <Link to="">

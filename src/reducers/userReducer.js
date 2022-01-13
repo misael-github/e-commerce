@@ -1,5 +1,9 @@
+// importo la const que cree para no poner strings y que no haya errores de tipeo
 import { REGISTERED, GET_STORES, LOGGED, GET_MOVIMIENTOS } from '../constants/userConstants'
 
+
+
+// State de reducer  user
 const initialState = {
     user: {},
     stores: [],
@@ -10,6 +14,7 @@ const initialState = {
     storeSelected: ''
 }
 
+// La data y el type es el que le paso en el dispatch del userActions
 export function useReducer(state = initialState, action) {
 
     switch (action.type) {
