@@ -48,7 +48,7 @@ export function useReducer(state = initialState, action) {
         case "SET_USER":
             return{
                 ...state,
-                user:action.payload
+                user:action.payload // si estoy deslogueado llega null y si no el objeto con la dat del user
             }    
         default:
             return state;

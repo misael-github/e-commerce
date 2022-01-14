@@ -5,18 +5,26 @@ import { Link } from "react-router-dom";
 import Button from "./Button";
 import { useState } from "react";
 import { useSelector } from "react-redux";
+import db from "../../db";
 
 
 const Header = () => {
   const [menu, setMenu] = useState(false);
   const {user} = useSelector((store) => store.user)
+  // Me deslogua firebesa llamando a su finction out
+  const logOut = () => {
+    console.log(user)
+    db.auth().signOut()
+  }
 
   return (
     <header className="container-header">
       <nav className="nav-header">
+        <Link to="/">
         <di className="logo">
           <h2> Olx</h2>
         </di>
+        </Link>
         <input
           className="input-search"
           type="text"
@@ -38,11 +46,20 @@ const Header = () => {
         ></i>
         {/* Si el menu esta es true el left es 0 sino -100% */}
         <ul className=" ul" style={{ left: menu ? "0" : "-100%" }}>
-          <Link to="/login">
-            <li className="list_items">
-              <Button title={user ? "LOG-OUT" : "INGRESAR"} className="button-ingresar"></Button>
+         
+            <li className="list_items" >
+              {user ? 
+              <Link to="/">
+              <Button title="LOG-OUT" className="button-ingresar" onClick={logOut}></Button>
+              </Link>
+               :
+               <Link to="/login">
+              <Button title="INGRESAR" className="button-ingresar"></Button>
+              </Link>
+               }
             </li>
-          </Link>
+            
+         
           <Link to="">
             <li className="list_items">
               <Button title="VENDER" className="button-vender"></Button>

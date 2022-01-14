@@ -20,8 +20,10 @@ function App() {
   // USEeFFECT SE EJECUTA CUANDO SE MONTA EL COMPONENTE EN LA PAGINA
   // En el segundo parametro (opcional) le paso valores y cuando cambien los valores se ejecuta la function callback nuevamente
   // si no le paso nada en el array se ejecuta 1 sola vez
+
+
   useEffect(() => {
-    db.auth().onAuthStateChanged((stateUser) => {
+    db.auth().onAuthStateChanged((stateUser) => { // Cuando el stado de autenticacion cambie ejcuta el codigo
       distpach({ type: "SET_USER", payload: stateUser });
     });
   }, []);

@@ -8,9 +8,9 @@ import { useDispatch } from "react-redux";
 import { LoginAction } from "../../actions/userAction";
 import { useSelector } from "react-redux";
 
+
 const Login = () => {
   
-
   const user = useSelector((store) => store.user)
   console.log(user)
   const distpach = useDispatch()
@@ -29,7 +29,8 @@ const Login = () => {
     e.preventDefault();
     // De la db utilizo el la función auth para loguearme y eligo con que metodo(funcion)
     // y le paso 2 parametros en este caso. Si conicide con el usuario que está en la db me loguea
-    distpach(LoginAction(formData)) 
+   await LoginAction(formData)// Espera a que se ejecute mi LoginAtion y luego continua
+    history("/")
   }
 
   return (
@@ -59,7 +60,9 @@ const Login = () => {
           ></Input>
         </div>
         <div className="container-btn-login">
+         
         <Button title="CONTINUAR" type="submit"></Button>
+        
         <Link to="/sign-up">
           <Button title="CREAR CUENTA" variant="outline" ></Button>
         </Link>

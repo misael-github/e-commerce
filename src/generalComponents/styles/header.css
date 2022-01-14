@@ -13,6 +13,11 @@
     font-size: 22px;
     font-weight: 600;
     color: #fff;
+    cursor: pointer;
+   
+}
+.nav-header a{
+  text-decoration: none;
 }
 .conatiner__header-list{
   
@@ -63,7 +68,7 @@ ul {
     padding: 10px;
     border-radius: 5px;
     border: solid rgb(193 191 191) 0.5px;
-    height: 32px;
+    height: 38px;
     margin-top: 5px;
     box-sizing: border-box;
 }
