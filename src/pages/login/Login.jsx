@@ -4,6 +4,7 @@ import Button from "../../generalComponents/components/Button";
 import db from "../../db";
 import "./login.css";
 import Input from "../../generalComponents/components/Input";
+import Title from "../../generalComponents/components/Title";
 import { useDispatch } from "react-redux";
 import { LoginAction } from "../../actions/userAction";
 import { useSelector } from "react-redux";
@@ -35,7 +36,9 @@ const Login = () => {
 
   return (
     <div className="container-form__login">
-      <h2>¡Hola! Ingresá tu e-mail y contraseña</h2>
+     
+      <Title text="¡Hola! Ingresá tu e-mail y contraseña"></Title>
+      {/* <h2></h2> */}
       <form method="" onSubmit={login} className="form">
         <div className="fieldset">
           <label className="fieldset-label"></label>

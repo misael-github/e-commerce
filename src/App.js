@@ -5,11 +5,9 @@ import { useEffect } from "react";
 import HomePage from "./pages/home/Home";
 import NotFound from "./pages/notFound/NotFound";
 import Login from "./pages/login/Login";
-import Vender from "./pages/vender/Vender";
+import Sell from "./pages/sell/Sell";
 import User from "./pages/user/User";
 import Users from "./pages/users/Users";
-import Registrarse from "./pages/usuario-registro/registrarse";
-import "./App.css";
 import SignUp from "./pages/sign-up/Sign-up";
 import db from "./db";
 import { useDispatch, useSelector } from "react-redux";
@@ -37,7 +35,7 @@ function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/vender" element={<Vender />} />
+          <Route path="/sell" element={<Sell />} />
           <Route path="/login" element={<Login />} />
           <Route path="/sign-up" element={<SignUp />}></Route>
           <Route path="/users" element={<Users />}></Route>

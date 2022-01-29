@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import db from "../../db";
-
+import Title from "../../generalComponents/components/Title";
 import "./sign-up.css";
 import Input from "../../generalComponents/components/Input";
 import Button from "../../generalComponents/components/Button";
@@ -31,7 +31,8 @@ const SignUp = () => {
   };
   return (
     <div className="container-form__login">
-      <h2>¡Hola! Creá tu cuenta de Olx</h2>
+      <Title text="¡Hola! Creá tu cuenta de Olx"></Title>
+      {/* <h2></h2> */}
       <form method="" onSubmit={SignUp} className="form">
        
 

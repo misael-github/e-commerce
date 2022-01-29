@@ -60,7 +60,7 @@ const Header = () => {
             </li>
             
          
-          <Link to="">
+          <Link to={ user ? "/sell":  "/login"}>
             <li className="list_items">
               <Button title="VENDER" className="button-vender"></Button>
             </li>

@@ -17,7 +17,8 @@ const Card = (props) => {
           <div className="line"></div>
 
           <div className="container__description-product">
-            <p className="description-product">{props.name}</p>
+            <p className="title-product">{props.name}</p>
+            <p className="description-product">{props.description}</p>
           </div>
           <p className="price">$ {props.price}</p>
 
