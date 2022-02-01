@@ -42,6 +42,19 @@ align-items: center;
 
 /* flex-direction: column; */
 }
+.reset-password{
+    text-align: end;
+    color: rebeccapurple;
+    cursor: pointer;
+    display: flex;
+    justify-content: end;
+}
+.reset-password:hover{
+    text-decoration: underline;
+}
+.reset-password:active{
+    color: red;
+}
 .icons-email-password{
     font-size: 25px;
     color:orange;

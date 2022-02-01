@@ -11,6 +11,6 @@ export const LoginAction = async (data) => {
         //   history("/")
         
       } catch (error) {
-        console.log(error)
+        throw error
       }
 }
