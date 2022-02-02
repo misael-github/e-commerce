@@ -20,7 +20,6 @@ const Login = () => {
 
   function handleInputChange(e) {
     const { value, name } = e.target; // capturo el value y la propiedad name
-
     setFormData({ ...formData, [name]: value }); // seteo de la propiedad name con lo que me llega
     // ej email que seria mi key y el valor
     console.log(formData);

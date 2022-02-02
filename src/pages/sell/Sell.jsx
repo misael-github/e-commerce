@@ -22,6 +22,7 @@ const Sell = () => {
       
       await db.firestore().collection("products").doc().set({...formData, userId: user.uid});
       alert("Producto cargado exitosamente!")
+      
     } catch (error) {
       alert(error);
     }

@@ -1,12 +1,17 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import db from "../../db";
 import Title from "../../generalComponents/components/Title";
 import "./sign-up.css";
 import Input from "../../generalComponents/components/Input";
 import Button from "../../generalComponents/components/Button";
+import { LoginAction } from "../../actions/userAction";
+import { firebaseErrors } from "../../firebaseErros";
 
 const SignUp = () => {
+
+  const history = useNavigate();
+
   const [formData, setFormData] = useState({
     // firstNameAndLastName: "",
     password: "",
@@ -25,9 +30,10 @@ const SignUp = () => {
 
   const SignUp = async (e) => {
     e.preventDefault();
-    // De la db utilizo el la función auth para loguearme y eligo con que metodo(funcion)
-    // y le paso 2 parametros en este caso. Si conicide con el usuario que está en la db me loguea
-    const credential = await db
+    try{
+      // De la db utilizo el la función auth para loguearme y eligo con que metodo(funcion)
+      // y le paso 2 parametros en este caso. Si conicide con el usuario que está en la db me loguea
+      const credential = await db
       .auth()
       .createUserWithEmailAndPassword(formData.email, formData.password); // Creo un user
     await db
@@ -41,8 +47,13 @@ const SignUp = () => {
         phone: formData.phone,
       }); // Creo un doc en la collection user con el id que me genera firebase al crear el user
       alert("Usuario creado correctamente")
-  };
 
+      await LoginAction(formData); // Espera a que se ejecute mi LoginAtion y luego continua
+      history("/");
+  }catch(error){
+    alert(firebaseErrors[error.code.split('/')[1]]);
+  }
+  };
   return (
     <div className="container-form__login">
       <Title text="¡Hola! Creá tu cuenta de Olx"></Title>
