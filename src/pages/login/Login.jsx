@@ -34,7 +34,7 @@ const Login = () => {
       await LoginAction(formData); // Espera a que se ejecute mi LoginAtion y luego continua
       history("/");
     } catch (error) {
-      alert(error);
+      alert(firebaseErrors[error.code.split('/')[1]]);
     }
   }
 
