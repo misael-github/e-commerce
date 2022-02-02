@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 import db from "../../db";
 import "./sell.css";
 import { useState } from "react";
+import Swal from "sweetalert2";
+
 
 const Sell = () => {
   const [formData, setFormData] = useState({
@@ -21,10 +23,15 @@ const Sell = () => {
       const user = db.auth().currentUser // Obtengo el userId 
       
       await db.firestore().collection("products").doc().set({...formData, userId: user.uid});
-      alert("Producto cargado exitosamente!")
-      
+      Swal.fire({
+        title:"Producto cargado exitosamente!"
+      })
+
     } catch (error) {
-      alert(error);
+      Swal.fire({
+        title:error
+      })
+    
     }
   };
 

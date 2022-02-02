@@ -7,9 +7,9 @@ import Input from "../../generalComponents/components/Input";
 import Button from "../../generalComponents/components/Button";
 import { LoginAction } from "../../actions/userAction";
 import { firebaseErrors } from "../../firebaseErros";
+import Swal from "sweetalert2";
 
 const SignUp = () => {
-
   const history = useNavigate();
 
   const [formData, setFormData] = useState({
@@ -30,29 +30,32 @@ const SignUp = () => {
 
   const SignUp = async (e) => {
     e.preventDefault();
-    try{
+    try {
       // De la db utilizo el la función auth para loguearme y eligo con que metodo(funcion)
       // y le paso 2 parametros en este caso. Si conicide con el usuario que está en la db me loguea
       const credential = await db
-      .auth()
-      .createUserWithEmailAndPassword(formData.email, formData.password); // Creo un user
-    await db
-      .firestore()
-      .collection("users")
-      .doc(credential.user.uid)
-      .set({
+        .auth()
+        .createUserWithEmailAndPassword(formData.email, formData.password); // Creo un user
+      await db.firestore().collection("users").doc(credential.user.uid).set({
         email: formData.email,
         name: formData.name,
         country: formData.country,
         phone: formData.phone,
       }); // Creo un doc en la collection user con el id que me genera firebase al crear el user
-      alert("Usuario creado correctamente")
+      Swal.fire({
+        icon: "success",
+        title: "Usuario creado correctamente!",
+        showConfirmButton: false,
+        timer: 1000,
+      });
 
       await LoginAction(formData); // Espera a que se ejecute mi LoginAtion y luego continua
       history("/");
-  }catch(error){
-    alert(firebaseErrors[error.code.split('/')[1]]);
-  }
+    } catch (error) {
+      Swal.fire({
+        title: firebaseErrors[error.code.split("/")[1]],
+      });
+    }
   };
   return (
     <div className="container-form__login">

@@ -10,6 +10,8 @@ import { LoginAction } from "../../actions/userAction";
 import { useSelector } from "react-redux";
 import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 import { firebaseErrors } from "../../firebaseErros";
+import Swal from "sweetalert2";
+
 
 const Login = () => {
   const user = useSelector((store) => store.user);
@@ -41,11 +43,18 @@ const Login = () => {
     const auth = getAuth();
     sendPasswordResetEmail(auth, formData.email)
       .then(() => {
-        alert("Password reset email sent!")
+        Swal.fire({
+          title:
+          "¡Correo electrónico de restablecimiento de contraseña enviado!"
+        })
+       
       })
       .catch((error) => {
+        Swal.fire({
+          title:firebaseErrors[error.code.split('/')[1]],
+
+        })
         
-        alert(firebaseErrors[error.code.split('/')[1]])
       });
     }
 
