@@ -27,7 +27,7 @@ function App() {
   }, []);
   // useSelector me traigo data del store
   const {user} = useSelector((store) => store.user)
-  console.log(user)
+  // console.log(user)
 
   return (
     <div className="App">
