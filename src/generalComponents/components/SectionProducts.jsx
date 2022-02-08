@@ -8,40 +8,42 @@ import db from "../../db";
 
 const SectionPoducts = () => {
 
+  const [products, setProducts]= useState([])
+  useEffect(() => {
+    try {
+      // onSnapshot es para que este escuchando todo el tiempo los cambios sino seria .get().then((querySnapshot))
+      db.firestore()
+      .collection("products") // colection products
+      .onSnapshot((querySnapshot) => { 
+          const productsList = []
+          querySnapshot.forEach((doc) => {
+            productsList.push(doc.data())
+          });
+          setProducts(productsList);
+          console.log(products)
+        });
+      } catch (e) {
+        console.log(e);
+      }
+  }, [])
+  
   return (
     <div className="container-section-products">
-      {useEffect(() => {
-        try {
-          // onSnapshot es para que este escuchando todo el tiempo los cambios sino seria .get().then((querySnapshot))
-          db.firestore()
-            .collection("products") // colection products
-            .onSnapshot((querySnapshot) => { 
-              querySnapshot.forEach((doc) => {
-                <Card
-                  name=""
-                  price={doc.data().price}
-                  ubication=""
-                  img={lavarropas}
-                  description={doc.data().description}
-                />;
-                console.log(doc.data());
-              });
-            });
-        } catch (e) {
-          console.log(e);
-        }
-      }, [])}
-
-      {/* {jsonProducts.map((product) => (
-    <Card
-      name={product.name}
-      price={product.price}
-      ubication={product.ubication}
-      img={lavarropas}
-      description={product.description}
-    />
-  ))} */}
+    {
+      products.map((p) =>(
+        
+        <Card
+               name={p.name}
+               price={p.price}
+               ubication=""
+               img={lavarropas}
+               description={p.description}
+             />
+      ))
+    }
     </div>
-  );
+  
+);
+
 };
 export default SectionPoducts;
