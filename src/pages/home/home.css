@@ -1,0 +1,15 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:ital,wght@0,400;1,700&family=Roboto+Slab:wght@600;700&family=Roboto:wght@300;400;500;700&display=swap');
+
+/* .container-HomePage{
+    margin: 0;
+    padding: 0;
+} */
+.main-container__slideShow{
+    font-family: 'Poppins', sans-serif;
+    background-color: #ede9e7;
+    max-width: 1000px;
+    margin: 50px auto;
+    overflow: hidden;
+    /* height: 434px; */
+}

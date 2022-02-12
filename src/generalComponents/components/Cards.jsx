@@ -11,7 +11,7 @@ const Card = (props) => {
       {/* <Link> */}
         <div className="main">
           <div className="container-img">
-            <img src={props.img} alt="imagen-producto" />
+            <img className="img-cards" src={props.img} alt="imagen-producto" />
           </div>
 
           <div className="line"></div>

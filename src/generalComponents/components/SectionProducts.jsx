@@ -29,9 +29,9 @@ const SectionPoducts = () => {
   
   return (
     <div className="container-section-products">
+        
     {
       products.map((p) =>(
-        
         <Card
                name={p.name}
                price={p.price}

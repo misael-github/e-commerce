@@ -1,4 +1,4 @@
-button{
+.button{
     width: 100%;
     font-size: 16px;
     background-color: orange;
@@ -11,7 +11,7 @@ button{
     height: 48px;
     color: #fff;
 }
-button.outline{
+.button.outline{
    background-color: transparent;
    color: orange;
    border: solid 1px orange;
@@ -19,6 +19,5 @@ button.outline{
 @media (min-width:949px){
     button{
         /* width: 8rem; */
-        
     }
 }
