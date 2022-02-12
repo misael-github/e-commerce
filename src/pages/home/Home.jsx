@@ -1,7 +1,4 @@
-import Banner from "../../generalComponents/components/Banner";
 import Header from "../../generalComponents/components/Header";
-import Card from "../../generalComponents/components/Cards";
-import Nav from "../../generalComponents/components/Nav";
 import "./home.css";
 import { useSelector } from "react-redux";
 import SectionPoducts from "../../generalComponents/components/SectionProducts";
@@ -21,38 +18,39 @@ const HomePage = () => {
   return (
     <div className="container-HomePage">
       <Header></Header>
-      <Nav category="Vehiculos"></Nav>
+      {/* <Nav category="Vehiculos"></Nav> */}
       <main className="main-container__slideShow">
         <Titulo>Productos destacados</Titulo>
-        <SlideShow controls = {true} autoplay= {true} velocidad = {3000} interval={3000}>
+        <SlideShow controls = {true} autoplay= {true} velocidad = {2000} interval={2000}>
             <Slide>
               <a href="https://www.google.com"></a>
               <img src={img1} alt="" />
-              <TextoSlide>
+              {/* <TextoSlide>
                 <p>15% de descuento en productos Apple</p>
-              </TextoSlide>
+              </TextoSlide> */}
             </Slide>
             <Slide>
               <a href="https://www.google.com"></a>
               <img src={img2} alt="" />
-              <TextoSlide>
+              {/* <TextoSlide>
                 <p>15% de descuento en productos Apple</p>
-              </TextoSlide>
+              </TextoSlide> */}
             </Slide>
             <Slide>
               <a href="https://www.google.com"></a>
               <img src={img3} alt="" />
-              <TextoSlide>
+              {/* <TextoSlide>
                 <p>15% de descuento en productos Apple</p>
-              </TextoSlide>
+              </TextoSlide> */}
             </Slide>
             <Slide>
               <a href="https://www.google.com"></a>
               <img src={img4} alt="" />
-              <TextoSlide>
+              {/* <TextoSlide>
                 <p>15% de descuento en productos Apple</p>
-              </TextoSlide>
+              </TextoSlide> */}
             </Slide>
+    
         </SlideShow>
       </main>
      
@@ -67,6 +65,7 @@ const Titulo = styled.p`
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 10px;
+  padding-left:15px;
 `;
 
 export default HomePage;

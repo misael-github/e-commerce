@@ -6,6 +6,8 @@ import Button from "./Button";
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import db from "../../db";
+import  {GoGrabber}  from "react-icons/go";
+import { GoX } from "react-icons/go";
 
 
 const Header = () => {
@@ -16,7 +18,9 @@ const Header = () => {
     console.log(user)
     db.auth().signOut()
   }
-
+const saludar = () => {
+  console.log("hola")
+}
   return (
     <header className="container-header">
       <nav className="nav-header">
@@ -34,16 +38,23 @@ const Header = () => {
         />
         {/* Si menu es true le pone display none sino flex ycada vez que hacen click seteo el valor de menu y
         asi hago que se vea o no cada icono */}
-        <i
-          className="fas fa-bars icon-burger"
+          <GoGrabber className="icon-bars"  style={{ display: menu ? "none" : "flex" }}
+          onClick={() => setMenu(true)}/>
+
+          {/* style recibe un onjeto con los styles */}
+          <GoX className="icon-cross"  style={{ display: menu ? "flex" : "none" }}
+          onClick={() => setMenu(false)}/>
+        {/* <i
+          className=""
           style={{ display: menu ? "none" : "flex" }}
           onClick={() => setMenu(true)}
-        ></i>
-        <i
+        ></i> */}
+        {/* <i
           className="fas fa-times icon-cruz"
           style={{ display: menu ? "flex" : "none" }}// style recibe un onjeto con los styles
           onClick={() => setMenu(false)}
-        ></i>
+        ></i> */}
+
         {/* Si el menu esta es true el left es 0 sino -100% */}
         <ul className=" ul" style={{ left: menu ? "0" : "-100%" }}>
          
