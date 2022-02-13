@@ -140,7 +140,9 @@ const TextoSlide = styled.div`
 const Controles = styled.div`
   position: absolute;
   top: 0;
-  z-index: 20;
+  display:flex;
+  justify-content:space-between;
+  // z-index: 20;
   width: 100%;
   height: 100%;
   pointer-events: none;
@@ -154,7 +156,8 @@ const Boton = styled.button`
   width: 50px;
   height: 100%;
   text-align: center;
-  position: absolute;
+  
+  // position: absolute;
   transition: 0.3s ease all;
   // &:hover{
   //     background:rgba(0, 0, 0, .2);
