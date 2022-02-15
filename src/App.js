@@ -11,6 +11,8 @@ import Users from "./pages/users/Users";
 import SignUp from "./pages/sign-up/Sign-up";
 import db from "./db";
 import { useDispatch, useSelector } from "react-redux";
+import Detail from "./pages/detailProduct/detailPoduct";
+
 
 function App() {
   const distpach = useDispatch();
@@ -40,7 +42,7 @@ function App() {
           <Route path="/sign-up" element={<SignUp />}></Route>
           <Route path="/users" element={<Users />}></Route>
           <Route path="/users/:userId" element={<User />}></Route>
-          <Route path="/users/:userId" element={<User />}></Route>
+          <Route path="/detail" element={<Detail/>}></Route>
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
