@@ -42,7 +42,7 @@ function App() {
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/users" element={<Users />} />
           <Route path="/users/:userId" element={<User />} />
-          <Route path="/product/:productName" element={<ProductDetail />} />
+          <Route path="/product/:pruductName" element={<ProductDetail/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
