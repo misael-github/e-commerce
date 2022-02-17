@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 // import auriculares from "../../assets/auricular.jpg";
 import jsonProducts from "../../products.json";
 import Cart from "./Cart";
+import "../styles/productDetail.css"
+
 
 const Card = (props) => {
   return (
     <div className="container-card">
-      {/* <Link> */}
+      <Link to={`product/${props.name}`} className="main__link--card">
         <div className="main">
           <div className="container-img">
             <img className="img-cards" src={props.img} alt="imagen-producto" />
@@ -33,7 +35,7 @@ const Card = (props) => {
           </div>
         </div> */}
         </div>
-      {/* </Link> */}
+      </Link>
     </div>
   );
 };
