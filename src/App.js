@@ -28,7 +28,7 @@ function App() {
     });
   }, []);
   // useSelector me traigo data del store
-  const {user} = useSelector((store) => store.user)
+  // const {user} = useSelector((store) => store.user)
   // console.log(user)
 
   return (
@@ -42,7 +42,7 @@ function App() {
           <Route path="/sign-up" element={<SignUp />} />
           <Route path="/users" element={<Users />} />
           <Route path="/users/:userId" element={<User />} />
-          <Route path="/product/:pruductName" element={<ProductDetail/>} />
+          <Route path="/product/:productId" element={<ProductDetail/>} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

@@ -17,8 +17,13 @@ const SectionPoducts = () => {
       .onSnapshot((querySnapshot) => { 
           const productsList = []
           querySnapshot.forEach((doc) => {
-            productsList.push(doc.data())
+            let data = doc.data()
+            data.id = doc.id
+            console.log(data)
+            productsList.push(data)
+            
           });
+          
           setProducts(productsList);
           console.log(products)
         });
@@ -32,12 +37,14 @@ const SectionPoducts = () => {
         
     {
       products.map((p) =>(
+        
         <Card
                name={p.name}
                price={p.price}
                ubication=""
                img={lavarropas}
                description={p.description}
+               id = {p.id}
              />
       ))
     }

@@ -1,16 +1,36 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "../styles/cards.css";
 import { Link } from "react-router-dom";
 // import auriculares from "../../assets/auricular.jpg";
 import jsonProducts from "../../products.json";
 import Cart from "./Cart";
 import "../styles/productDetail.css"
-
+import db from "../../db"
 
 const Card = (props) => {
+
+  
+  const [product, setProduct] = useState("")
+  useEffect(() => {
+    try {
+      // onSnapshot es para que este escuchando todo el tiempo los cambios sino seria .get().then((querySnapshot))
+      db.firestore()
+      .collection("products") // colection products
+      .onSnapshot((querySnapshot) => { 
+          querySnapshot.forEach((doc) => {
+            
+            
+          });
+          
+          
+        });
+      } catch (e) {
+        console.log(e);
+      }
+  }, [])
   return (
     <div className="container-card">
-      <Link to={`product/${props.name}`} className="main__link--card">
+      <Link to={`product/${props.id}`} className="main__link--card">
         <div className="main">
           <div className="container-img">
             <img className="img-cards" src={props.img} alt="imagen-producto" />

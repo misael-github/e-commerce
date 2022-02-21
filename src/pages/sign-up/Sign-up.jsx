@@ -1,12 +1,18 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import db from "../../db";
+import "./sign-up.css"
 import Title from "../../generalComponents/components/Title";
 import "./sign-up.css";
 import Input from "../../generalComponents/components/Input";
 import Button from "../../generalComponents/components/Button";
 import { LoginAction } from "../../actions/userAction";
 import { firebaseErrors } from "../../firebaseErros";
+import {FaUser}  from "react-icons/fa"
+import {AiFillHome} from "react-icons/ai"
+import {BsPhoneFill} from "react-icons/bs"
+import {MdEmail} from "react-icons/md"
+import {RiLockPasswordFill} from "react-icons/ri"
 import Swal from "sweetalert2";
 
 const SignUp = () => {
@@ -64,18 +70,24 @@ const SignUp = () => {
       <form method="" onSubmit={SignUp} className="form">
         <div className="fieldset">
           <label className="fieldset-label"></label>
-          <i class="fas fa-lock icons-email-password"></i>
+          <FaUser
+          className="icons-account icon-user"
+          />
+          {/* <i class="fas fa-lock icons-email-password"></i> */}
           <Input
             type="text"
             className="fieldset-input"
             name="name"
-            placeholder="Nombre"
+            placeholder="Nombre y apellido"
             onChange={handleInputChange}
           ></Input>
         </div>
         <div className="fieldset">
           <label className="fieldset-label"></label>
-          <i class="fas fa-lock icons-email-password"></i>
+          <AiFillHome
+          className="icons-account"
+          />
+          {/* <i class="fas fa-lock icons-email-password"></i> */}
           <Input
             type="text"
             className="fieldset-input"
@@ -86,18 +98,24 @@ const SignUp = () => {
         </div>
         <div className="fieldset">
           <label className="fieldset-label"></label>
-          <i class="fas fa-lock icons-email-password"></i>
+          <BsPhoneFill
+          className="icons-account"
+          />
+          {/* <i class="fas fa-lock icons-email-password"></i> */}
           <Input
             type="text"
             className="fieldset-input"
             name="phone"
-            placeholder="Teléfono"
+            placeholder="Celular"
             onChange={handleInputChange}
           ></Input>
         </div>
         <div className="fieldset">
           <label className="fieldset-label"></label>
-          <i class="fas fa-envelope icons-email-password"></i>
+          <MdEmail
+          className="icons-account"
+          />
+          {/* <i class="fas fa-envelope icons-email-password"></i> */}
           <Input
             type="email"
             className="fieldset-input"
@@ -108,7 +126,10 @@ const SignUp = () => {
         </div>
         <div className="fieldset">
           <label className="fieldset-label"></label>
-          <i class="fas fa-lock icons-email-password"></i>
+          <RiLockPasswordFill
+          className="icons-account"
+          />
+          {/* <i class="fas fa-lock icons-email-password"></i> */}
           <Input
             type="password"
             className="fieldset-input"

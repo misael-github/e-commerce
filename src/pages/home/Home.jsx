@@ -21,37 +21,37 @@ const HomePage = () => {
       {/* <Nav category="Vehiculos"></Nav> */}
       <main className="main-container__slideShow">
         <Titulo>Productos destacados</Titulo>
-        <SlideShow controls = {true} autoplay= {true} velocidad = {2000} interval={2000}>
+        {/* <SlideShow controls = {true} autoplay= {true} velocidad = {2000} interval={2000}>
             <Slide>
               <a href="https://www.google.com"></a>
-              <img src={img1} alt="" />
+              <img src={img1} alt="" /> */}
               {/* <TextoSlide>
                 <p>15% de descuento en productos Apple</p>
               </TextoSlide> */}
-            </Slide>
+            {/* </Slide>
             <Slide>
               <a href="https://www.google.com"></a>
-              <img src={img2} alt="" />
+              <img src={img2} alt="" /> */}
               {/* <TextoSlide>
                 <p>15% de descuento en productos Apple</p>
               </TextoSlide> */}
-            </Slide>
+            {/* </Slide>
             <Slide>
               <a href="https://www.google.com"></a>
-              <img src={img3} alt="" />
+              <img src={img3} alt="" /> */}
               {/* <TextoSlide>
                 <p>15% de descuento en productos Apple</p>
               </TextoSlide> */}
-            </Slide>
+            {/* </Slide>
             <Slide>
               <a href="https://www.google.com"></a>
-              <img src={img4} alt="" />
+              <img src={img4} alt="" /> */}
               {/* <TextoSlide>
                 <p>15% de descuento en productos Apple</p>
               </TextoSlide> */}
-            </Slide>
+            {/* </Slide>
     
-        </SlideShow>
+        </SlideShow> */}
       </main>
      
       <h3 className="section-products__title">Nuevas recomendaciones</h3>
