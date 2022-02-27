@@ -2,37 +2,58 @@ import Input from "../../generalComponents/components/Input";
 import Header from "../../generalComponents/components/Header";
 import Button from "../../generalComponents/components/Button";
 import Title from "../../generalComponents/components/Title";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import db from "../../db";
 import "./sell.css";
 import { useState } from "react";
 import Swal from "sweetalert2";
-
+import storage from "../../store";
 
 const Sell = () => {
+  const [file, setFile] = useState("");
+
   const [formData, setFormData] = useState({
     name: "",
     description: "",
     price: "",
+    file: "",
   });
 
   const upLoadProduct = async (e) => {
     // Creo una collection con el nombre que quiero y un doc con la info que tiene el state
     try {
       e.preventDefault();
-      const user = db.auth().currentUser // Obtengo el userId 
-      
-      await db.firestore().collection("products").doc().set({...formData, userId: user.uid});
+      const user = db.auth().currentUser; // Obtengo el userId
+      await db
+        .firestore()
+        .collection("products")
+        .doc()
+        .set({ ...formData, userId: user.uid });
+      console.log();
       Swal.fire({
-        title:"Producto cargado exitosamente!"
-      })
-
+        title: "Producto cargado exitosamente!",
+      });
     } catch (error) {
       Swal.fire({
-        title:error
-      })
-    
+        title: error,
+      });
     }
+  };
+  //storage
+  const putFileFB = async (file, fileName) => {
+    try {
+      const res = await storage.child(fileName).put(file);
+      return await res.ref.getDownloadURL();
+    } catch (error) {
+      console.error(error);
+      return error;
+    }
+  };
+
+  const handleInputChange = async (e) => {
+    const img = e.target.value;
+    const productId = console.log(img);
+    // const url = await putFileFB(img, `/products/${productId}_${img.name}`)
   };
 
   return (
@@ -80,7 +101,9 @@ const Sell = () => {
               }
             ></Input>
           </div>
-          <input type="file" />
+
+          <input type="file" value={file} onChange={handleInputChange} />
+
           <div className="container-btn-login">
             <Button
               title="CONTINUAR"

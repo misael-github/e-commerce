@@ -32,10 +32,12 @@ const Login = () => {
     // De la db utilizo el la función auth para loguearme y eligo con que metodo(funcion)
     // y le paso 2 parametros en este caso. Si conicide con el usuario que está en la db me loguea
     try {
-      await LoginAction(formData); // Espera a que se ejecute mi LoginAtion y luego continua
+      await LoginAction(formData); // Espera a que se ejecute mi LoginAction y luego continua
       history("/");
     } catch (error) {
-      alert(firebaseErrors[error.code.split('/')[1]]);
+      Swal.fire(
+        (firebaseErrors[error.code.split('/')[1]])
+      );
     }
   }
 

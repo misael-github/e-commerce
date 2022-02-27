@@ -72,11 +72,11 @@ const Header = () => {
             <li>
               {user ? (
                 <Link to="/">
-                  <Button title="LOG-OUT" onClick={logOut}></Button>
+                  <Button title="LOG-OUT" variant="outline" onClick={logOut}></Button>
                 </Link>
               ) : (
                 <Link to="/login">
-                  <Button title="INGRESAR" variant="outline"></Button>
+                  <Button title="INGRESAR" variant="outline" ></Button>
                 </Link>
               )}
             </li>

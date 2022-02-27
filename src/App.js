@@ -11,7 +11,7 @@ import Users from "./pages/users/Users";
 import SignUp from "./pages/sign-up/Sign-up";
 import db from "./db";
 import { useDispatch, useSelector } from "react-redux";
-import ProductDetail from "./generalComponents/components/ProductDetail";
+import ProductDetail from "./pages/detailProduct/ProductDetail";
 
 
 function App() {

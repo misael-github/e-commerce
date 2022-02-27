@@ -17,15 +17,13 @@ const SectionPoducts = () => {
       .onSnapshot((querySnapshot) => { 
           const productsList = []
           querySnapshot.forEach((doc) => {
-            let data = doc.data()
-            data.id = doc.id
-            console.log(data)
-            productsList.push(data)
+            let data = doc.data() // Creo una var data y le asigno la toda la data que traigo de la db. (la db me trae la data en formato objeto)
+            data.id = doc.id  // Creo la prop id en el objeto data y le doy el valor de doc.id
+            // console.log(data)
+            productsList.push(data) // A el array de objetos le agrego data. Me da un warning
             
           });
-          
           setProducts(productsList);
-          console.log(products)
         });
       } catch (e) {
         console.log(e);
@@ -39,6 +37,7 @@ const SectionPoducts = () => {
       products.map((p) =>(
         
         <Card
+               key = {p.id}
                name={p.name}
                price={p.price}
                ubication=""

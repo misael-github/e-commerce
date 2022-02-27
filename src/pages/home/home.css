@@ -13,3 +13,9 @@
     overflow: hidden;
     /* height: 434px; */
 }
+.section-products__title{
+    font-family: 'Poppins', sans-serif;
+    background-color: #EDEA0B;
+    padding: 5px ;
+    max-width: 380px;
+}

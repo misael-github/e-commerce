@@ -1,18 +1,18 @@
 import Header from "../../generalComponents/components/Header";
 import "./home.css";
-import { useSelector } from "react-redux";
+// import { useSelector } from "react-redux";
 import SectionPoducts from "../../generalComponents/components/SectionProducts";
-import {
-  SlideShow,
-  Slide,
-  TextoSlide,
-} from "../../generalComponents/components/SlidesShow";
+// import {
+//   SlideShow,
+//   Slide,
+//   TextoSlide,
+// } from "../../generalComponents/components/SlidesShow";
 import "./home.css";
-import styled from "styled-components";
-import img1 from "../../assets/1.jpg";
-import img2 from "../../assets/2.jpg";
-import img3 from "../../assets/3.jpg";
-import img4 from "../../assets/4.jpg";
+// import styled from "styled-components";
+// import img1 from "../../assets/1.jpg";
+// import img2 from "../../assets/2.jpg";
+// import img3 from "../../assets/3.jpg";
+// import img4 from "../../assets/4.jpg";
 
 const HomePage = () => {
   return (
@@ -20,7 +20,7 @@ const HomePage = () => {
       <Header></Header>
       {/* <Nav category="Vehiculos"></Nav> */}
       <main className="main-container__slideShow">
-        <Titulo>Productos destacados</Titulo>
+        {/* <Titulo>Productos destacados</Titulo> */}
         {/* <SlideShow controls = {true} autoplay= {true} velocidad = {2000} interval={2000}>
             <Slide>
               <a href="https://www.google.com"></a>
@@ -54,18 +54,18 @@ const HomePage = () => {
         </SlideShow> */}
       </main>
      
-      <h3 className="section-products__title">Nuevas recomendaciones</h3>
+      <h3 className="section-products__title">Productos destacados</h3>
       <SectionPoducts></SectionPoducts>
     </div>
   );
 };
 
-const Titulo = styled.p`
-  fotn-size: 18px;
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 10px;
-  padding-left:15px;
-`;
+// const Titulo = styled.p`
+//   fotn-size: 18px;
+//   font-weight: 700;
+//   text-transform: uppercase;
+//   margin-bottom: 10px;
+//   padding-left:15px;
+// `;
 
 export default HomePage;
