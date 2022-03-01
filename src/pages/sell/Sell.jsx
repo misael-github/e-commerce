@@ -23,13 +23,11 @@ const Sell = () => {
     // Creo una collection con el nombre que quiero y un doc con la info que tiene el state
     try {
       e.preventDefault();
+      const productsCollectionRef = db.firestore().collection("products")
       const user = db.auth().currentUser; // Obtengo el userId
-      await db
-        .firestore()
-        .collection("products")
-        .doc()
-        .set({ ...formData, userId: user.uid });
-      console.log();
+      productsCollectionRef.add({ ...formData, userId: user.uid  }).then(r => console.log(r.id))
+     
+     
       Swal.fire({
         title: "Producto cargado exitosamente!",
       });
@@ -101,9 +99,9 @@ const Sell = () => {
               }
             ></Input>
           </div>
-
-          <input type="file" value={file} onChange={handleInputChange} />
-
+           <div className="cotainer-input--file">
+          <input type="file" className="input-file" value={file} onChange={handleInputChange} />
+          </div>
           <div className="container-btn-login">
             <Button
               title="CONTINUAR"

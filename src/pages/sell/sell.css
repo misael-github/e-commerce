@@ -5,3 +5,15 @@
 .fielset-sell{
     margin-bottom: 50px;
 }
+.cotainer-input--file{
+    background-color: #4c5a99;
+  color: #fff;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 10px;
+  text-align: center;
+  border-radius: 5px;
+
+
+}

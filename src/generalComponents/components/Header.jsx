@@ -87,10 +87,20 @@ const Header = () => {
             </Link>
           </div>
           <div className="ul__container--items">
-            <FaChevronDown  size="22px" className="ul__icons"/>
-            <Link to="">
-              <li className="list_items">Categorias</li>
-            </Link>
+            {/* <FaChevronDown  size="22px" className="ul__icons"/> */}
+            {/* <Link to=""> */}
+              <details className="details">
+                <summary>Categorias</summary>
+                <ul className="ul__categorys">
+                  <li className="li__categorys"><Link to="/" className="items__ul--categorys">Vehiculos</Link></li>
+                  <li className="li__categorys"><Link to="/" className="items__ul--categorys">Inmuebles</Link></li>
+                  <li className="li__categorys"><Link to="/" className="items__ul--categorys">Electrodomésticos</Link></li>
+                  <li className="li__categorys"><Link to="/" className="items__ul--categorys">Construcción</Link></li>
+                  <li className="li__categorys"><Link to="/" className="items__ul--categorys" >Tecnologia</Link></li>
+                  <li className="li__categorys"><Link to="/" className="items__ul--categorys">Ropa</Link></li>
+                </ul>
+              </details>
+            {/* </Link> */}
           </div>
           <div className="ul__container--items">
             <BiUserCircle size="30px" className="ul__icons"/>

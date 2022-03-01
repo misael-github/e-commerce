@@ -109,3 +109,36 @@
     font-size: 32px;
   }
 }
+.details{
+  color: #fff;
+  padding: 5px 10px 5px 30px;
+  transition: all 0.9s ease-in-out ;
+  max-height: 25px;
+  overflow: hidden;
+}
+.details[open] {
+  max-height: 500px;
+}
+.details[close]{
+  transition: all 0.9s ease-in-out ;
+}
+.details[open] summary{
+  padding-bottom: 20px;
+}
+summary{
+  font-size: 18px;
+  outline: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+.ul__categorys{
+  list-style: none;
+}
+.li__categorys{
+  margin: 10px;
+}
+.items__ul--categorys{
+  font-size: 18px;
+  padding: 10px 0;
+  color: #fff;
+}
