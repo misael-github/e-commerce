@@ -1,13 +1,13 @@
-import Input from "../../generalComponents/components/Input";
-import Header from "../../generalComponents/components/Header";
-import Button from "../../generalComponents/components/Button";
-import Title from "../../generalComponents/components/Title";
+import Input from "../../components/GeneralComponents/Input";
+import Header from "../../components/GeneralComponents/Header";
+import Button from "../../components/GeneralComponents/Button";
+import Title from "../../components/GeneralComponents/Title";
 // import { Link } from "react-router-dom";
-import db from "../../db";
-import "./sell.css";
+import db from "../../config/db";
+import "../../styles/sell.css";
 import { useState } from "react";
 import Swal from "sweetalert2";
-import storage from "../../store";
+import storage from "../../store/store";
 
 const Sell = () => {
   const [file, setFile] = useState("");

@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
-import "../styles/sectionProducts.css";
-import Card from "../../generalComponents/components/Cards";
+import "../../styles/GeneralComponents/sectionProducts.css";
+import Card from "../../components/GeneralComponents/Cards";
 // import hilux from "../../assets/hilux.jpg"
 import lavarropas from "../../assets/lavarropas.jpg";
 import jsonProducts from "../../products.json";
-import db from "../../db";
+import db from "../../config/db";
 
 const SectionPoducts = () => {
 

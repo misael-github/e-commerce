@@ -1,10 +1,10 @@
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import Button from "../../generalComponents/components/Button";
-import db from "../../db";
-import "./login.css";
-import Input from "../../generalComponents/components/Input";
-import Title from "../../generalComponents/components/Title";
+import Button from "../../components/GeneralComponents/Button";
+import db from "../../config/db";
+import "../../styles/login.css";
+import Input from "../../components/GeneralComponents/Input";
+import Title from "../../components/GeneralComponents/Title";
 import { useDispatch } from "react-redux";
 import { LoginAction } from "../../actions/userAction";
 import { useSelector } from "react-redux";

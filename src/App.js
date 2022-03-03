@@ -1,5 +1,5 @@
-import Cart from "./generalComponents/components/Cart";
-import Footer from "../src/generalComponents/components/Footer";
+import Cart from "./components/GeneralComponents/Cart";
+import Footer from "./components/GeneralComponents/Footer";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { useEffect } from "react";
 import HomePage from "./pages/home/Home";
@@ -9,7 +9,7 @@ import Sell from "./pages/sell/Sell";
 import User from "./pages/user/User";
 import Users from "./pages/users/Users";
 import SignUp from "./pages/sign-up/Sign-up";
-import db from "./db";
+import db from "./config/db";
 import { useDispatch, useSelector } from "react-redux";
 import ProductDetail from "./pages/detailProduct/ProductDetail";
 

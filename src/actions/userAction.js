@@ -1,4 +1,4 @@
-import db  from "../../src/db"
+import db  from "../config/db"
 import { Link, useNavigate } from "react-router-dom";
 
 // El Action interactua con una promesa asincrona y luego de eso dispacha info al store

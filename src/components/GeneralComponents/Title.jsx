@@ -1,4 +1,4 @@
-import "../styles/title.css"
+import "../../styles/GeneralComponents/title.css"
 
 const Title = (props) => {
     return (

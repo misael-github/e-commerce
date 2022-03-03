@@ -1,11 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import db from "../../db";
-import "./sign-up.css"
-import Title from "../../generalComponents/components/Title";
-import "./sign-up.css";
-import Input from "../../generalComponents/components/Input";
-import Button from "../../generalComponents/components/Button";
+import db from "../../config/db";
+import "../../styles/sign-up.css"
+import Title from "../../components/GeneralComponents/Title";
+
+import Input from "../../components/GeneralComponents/Input";
+import Button from "../../components/GeneralComponents/Button";
 import { LoginAction } from "../../actions/userAction";
 import { firebaseErrors } from "../../firebaseErros";
 import {FaUser}  from "react-icons/fa"

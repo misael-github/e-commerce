@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
-import "../styles/cards.css";
+import "../../styles/GeneralComponents/cards.css";
 import { Link } from "react-router-dom";
 // import auriculares from "../../assets/auricular.jpg";
 import jsonProducts from "../../products.json";
-import Cart from "./Cart";
-import "../styles/productDetail.css"
-import db from "../../db"
+import Cart from "../GeneralComponents/Cart";
+import "../../styles/GeneralComponents/productDetail.css"
+import db from "../../config/db"
 
 const Card = (props) => {
 

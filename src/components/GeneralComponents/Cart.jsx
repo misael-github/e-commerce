@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/cards.css";
+import "../../styles/GeneralComponents/cards.css";
 // import auriculares from "../../assets/auricular.jpg";
 import jsonProducts from "../../products.json";
 // import { json } from "express";

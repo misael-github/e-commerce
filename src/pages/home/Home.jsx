@@ -1,13 +1,13 @@
-import Header from "../../generalComponents/components/Header";
-import "./home.css";
+import Header from "../../components/GeneralComponents/Header";
+import "../../styles/home.css";
 // import { useSelector } from "react-redux";
-import SectionPoducts from "../../generalComponents/components/SectionProducts";
+import SectionPoducts from "../../components/GeneralComponents/SectionProducts";
 // import {
 //   SlideShow,
 //   Slide,
 //   TextoSlide,
 // } from "../../generalComponents/components/SlidesShow";
-import "./home.css";
+import "../../styles/home.css";
 // import styled from "styled-components";
 // import img1 from "../../assets/1.jpg";
 // import img2 from "../../assets/2.jpg";

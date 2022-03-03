@@ -1,11 +1,11 @@
-import "../styles/header.css";
+import "../../styles/GeneralComponents/header.css";
 import { Link } from "react-router-dom";
 
 // import { BiMenu } from "react-icons/bi";
 import Button from "./Button";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import db from "../../db";
+import db from "../../config/db";
 import { GoGrabber } from "react-icons/go";
 import { GoX } from "react-icons/go";
 import { FaListUl } from "react-icons/fa";
