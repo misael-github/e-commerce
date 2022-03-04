@@ -15,6 +15,7 @@ import "../../styles/home.css";
 // import img4 from "../../assets/4.jpg";
 
 const HomePage = () => {
+ 
   return (
     <div className="container-HomePage">
       <Header></Header>
@@ -55,6 +56,7 @@ const HomePage = () => {
       </main>
      
       <h3 className="section-products__title">Productos destacados</h3>
+     
       <SectionPoducts></SectionPoducts>
     </div>
   );

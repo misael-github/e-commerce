@@ -8,51 +8,64 @@ import "../../styles/sell.css";
 import { useState } from "react";
 import Swal from "sweetalert2";
 import storage from "../../store/store";
+import { useEffect } from "react";
 
 const Sell = () => {
-  const [file, setFile] = useState("");
+  const [files, setFiles] = useState([]);
 
   const [formData, setFormData] = useState({
     name: "",
     description: "",
     price: "",
-    file: "",
+    file:""
   });
 
+  const archivoHandler = async  (e) => {
+    const archivo = e.target.files[0] // Obtengo la imagen
+    const storageRef = db.storage().ref() // Hago referencia al storage
+    const archivoPath =  storageRef.child(archivo.name)
+    await archivoPath.put(archivo) // Inserto el archivo
+    console.log("archivo cargado: ", archivo.name)
+    const url = await archivoPath.getDownloadURL() // Obtengo la url
+    await setFormData({...formData, file: url})
+   
+    console.log(formData.file)
+  }
   const upLoadProduct = async (e) => {
     // Creo una collection con el nombre que quiero y un doc con la info que tiene el state
     try {
       e.preventDefault();
-      const productsCollectionRef = db.firestore().collection("products")
+      const productsCollectionRef = await db.firestore().collection("products")
       const user = db.auth().currentUser; // Obtengo el userId
-      productsCollectionRef.add({ ...formData, userId: user.uid  }).then(r => console.log(r.id))
-     
-     
       Swal.fire({
-        title: "Producto cargado exitosamente!",
-      });
+        title:"Cargando...",
+        // confirmButtonText:"",
+        showConfirmButton:false,
+
+      })
+      await productsCollectionRef.add({ ...formData, userId: user.uid  })
+        Swal.fire({
+          icon:"success",
+          title: "¡Producto cargado exitosamente!",
+       
+      })
+    
     } catch (error) {
       Swal.fire({
         title: error,
       });
     }
   };
-  //storage
-  const putFileFB = async (file, fileName) => {
-    try {
-      const res = await storage.child(fileName).put(file);
-      return await res.ref.getDownloadURL();
-    } catch (error) {
-      console.error(error);
-      return error;
-    }
-  };
 
-  const handleInputChange = async (e) => {
-    const img = e.target.value;
-    const productId = console.log(img);
-    // const url = await putFileFB(img, `/products/${productId}_${img.name}`)
-  };
+  // useEffect(() => {
+  //   const readData = async () => {
+  //     const fileList = await db.firestore().collection("products").get()
+  //     setFiles(fileList.docs.map((doc) => doc.data()))
+  //   }
+  //   readData()
+  // }, [])
+  
+
 
   return (
     <div className="container-sell">
@@ -100,8 +113,13 @@ const Sell = () => {
             ></Input>
           </div>
            <div className="cotainer-input--file">
-          <input type="file" className="input-file" value={file} onChange={handleInputChange} />
+          <input type="file" className="input-file"  onChange={archivoHandler} />
           </div>
+          <ul className="ul-file"> 
+            {files.map((doc) => 
+              <li className="ul-file__items"><img src={doc.file} alt="" height="100px" width="100px" /></li>
+            )}
+          </ul>
           <div className="container-btn-login">
             <Button
               title="CONTINUAR"

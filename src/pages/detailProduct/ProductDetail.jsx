@@ -29,11 +29,13 @@ const ProductDetail = () => {
   return (
     <div>
       <Header />
-      <div>
+      <div className="container-card__detail ">
+        <img src={productdetail.file} alt="" />
         <h2>{productdetail.name}</h2>
          <p>{productdetail.description}</p> 
          <p>{productdetail.price}</p>
       </div>
+     <button>Comprar</button>
     </div>
   );
 };

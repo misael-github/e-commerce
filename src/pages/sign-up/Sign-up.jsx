@@ -24,6 +24,7 @@ const SignUp = () => {
     email: "",
     name: "",
     country: "",
+    province:"",
     phone: "",
   });
 
@@ -47,6 +48,7 @@ const SignUp = () => {
         name: formData.name,
         country: formData.country,
         phone: formData.phone,
+        province: formData.province
       }); // Creo un doc en la collection user con el id que me genera firebase al crear el user
       Swal.fire({
         icon: "success",
@@ -79,6 +81,20 @@ const SignUp = () => {
             className="fieldset-input"
             name="name"
             placeholder="Nombre y apellido"
+            onChange={handleInputChange}
+          ></Input>
+        </div>
+        <div className="fieldset">
+          <label className="fieldset-label"></label>
+          <FaUser
+          className="icons-account icon-user"
+          />
+          {/* <i class="fas fa-lock icons-email-password"></i> */}
+          <Input
+            type="text"
+            className="fieldset-input"
+            name="name"
+            placeholder="Provincia"
             onChange={handleInputChange}
           ></Input>
         </div>

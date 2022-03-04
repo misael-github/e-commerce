@@ -41,7 +41,7 @@ const SectionPoducts = () => {
                name={p.name}
                price={p.price}
                ubication=""
-               img={lavarropas}
+               img={p.file}
                description={p.description}
                id = {p.id}
              />
