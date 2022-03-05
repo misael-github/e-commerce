@@ -38,11 +38,11 @@ const SectionPoducts = () => {
         
         <Card
                key = {p.id}
-               name={p.name}
+               name={p.name.charAt(0).toUpperCase() + p.name.slice(1)}
                price={p.price}
                ubication=""
                img={p.file}
-               description={p.description}
+               description={p.description.charAt(0).toUpperCase() + p.description.slice(1)}
                id = {p.id}
              />
       ))

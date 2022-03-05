@@ -75,13 +75,13 @@
 }
 .input-search {
   /* display: block; */
-  width: 70%;
+  /* width: 70%;
   padding: 10px;
   border-radius: 16px;
   border: solid rgb(193 191 191) 0.5px;
   height: 36px;
   margin-top: 5px;
-  box-sizing: border-box;
+  box-sizing: border-box; */
 }
 @media (min-width: 576px) {
   .nav-header {
@@ -100,11 +100,11 @@
     display: flex;
     /* justify-content: space-between; */
   }
-  .input-search {
+  /* .input-search {
     height: 42px;
     width: 50%;
     border-radius: 3px;
-  }
+  } */
   .logo {
     font-size: 32px;
   }

@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Header from "../../components/GeneralComponents/Header";
 import db from "../../config/db";
+import Button from "../../components/GeneralComponents/Button";
 
 const ProductDetail = () => {
   const { productId } = useParams();
@@ -29,13 +30,13 @@ const ProductDetail = () => {
   return (
     <div>
       <Header />
-      <div className="container-card__detail ">
+      <div className="container-card__detail-product ">
         <img src={productdetail.file} alt="" />
-        <h2>{productdetail.name}</h2>
-         <p>{productdetail.description}</p> 
-         <p>{productdetail.price}</p>
+        <h2 className="name-product">{productdetail.name}</h2>
+         <p className="price-product">{productdetail.price}</p>
+         <p className="description-product">{productdetail.description}</p> 
       </div>
-     <button>Comprar</button>
+     <Button title="Comprar"></Button>
     </div>
   );
 };

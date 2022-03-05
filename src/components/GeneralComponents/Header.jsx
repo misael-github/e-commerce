@@ -1,5 +1,6 @@
 import "../../styles/GeneralComponents/header.css";
 import { Link } from "react-router-dom";
+import SearchInput from "../GeneralComponents/Search"
 
 // import { BiMenu } from "react-icons/bi";
 import Button from "./Button";
@@ -34,13 +35,15 @@ const Header = () => {
             <h2> Olx</h2>
           </di>
         </Link>
-        <input
+       
+        {/* <input
           className="input-search"
           type="text"
           name=""
           id=""
           placeholder="Buscar productos, marcas y mas..."
-        />
+        /> */}
+         <SearchInput></SearchInput>
         {/* Si menu es true le pone display none sino flex ycada vez que hacen click seteo el valor de menu y
         asi hago que se vea o no cada icono */}
         <GoGrabber

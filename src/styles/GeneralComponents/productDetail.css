@@ -2,3 +2,36 @@
     text-decoration: none;
     color: #000;
 }
+.container-card__detail-product{
+    min-height: 400px;
+    width: 75%;
+    height: 400px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    align-items: center;
+}
+.container-card__detail-product img {
+    margin-top: auto;
+    width: 100%;
+    height: 75%;
+    border-radius: 6px;
+}
+.name-product{
+    align-self: flex-start;
+    /* font-size: 26px; */
+    margin-top: 10px;
+    font-weight: 700;
+    /* color: orange; */
+}
+.price-product{
+    align-self: flex-start;
+}
+.description-product{
+    align-self: flex-start;
+
+}
+.container-card__detail-product button{
+  width: 80%;
+}
