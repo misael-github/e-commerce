@@ -40,7 +40,7 @@ const Card = (props) => {
 
           <div className="container__description-product">
             <p className="title-product">{props.name}</p>
-            <p className="description-product">{props.description}</p>
+            <p className="description-product">{props.shortDescription}</p>
           </div>
           <p className="price">$ {props.price}</p>
 

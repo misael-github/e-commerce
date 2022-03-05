@@ -1,37 +1,76 @@
-.main__link--card{
-    text-decoration: none;
-    color: #000;
+.main__link--card {
+  text-decoration: none;
+  color: #000;
 }
-.container-card__detail-product{
-    min-height: 400px;
-    width: 75%;
-    height: 400px;
-    margin: auto;
+.info-container {
+  width: 75%;
+  min-height: 230px;
+  /* margin-top: 30px; */
+}
+@media (min-width: 580px) {
+  .info-container {
+    margin-left: 5%;
+    width: 35%;
+  }
+}
+.container-card__detail-product {
+  min-height: 400px;
+  /* width: 75%; */
+  min-height: 400px;
+  margin: auto;
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+@media (min-width: 580px) {
+  .container-card__detail-product {
     display: flex;
-    flex-direction: column;
-    justify-content:space-around;
+    flex-direction: row;
+    justify-content: center;
     align-items: center;
+  }
 }
 .container-card__detail-product img {
-    margin-top: auto;
-    width: 100%;
-    height: 75%;
-    border-radius: 6px;
+  margin-top: auto;
+  width: 75%;
+  /* height: 75%; */
+  border-radius: 6px;
 }
-.name-product{
-    align-self: flex-start;
-    /* font-size: 26px; */
-    margin-top: 10px;
-    font-weight: 700;
-    /* color: orange; */
+@media (min-width: 580px) {
+  .container-card__detail-product img {
+    max-width: 45%;
+    min-height: 350px;
+    max-height: 300px;
+    margin-bottom: 30px;
+    align-self: flex-end;
+  }
 }
-.price-product{
-    align-self: flex-start;
-}
-.description-product{
-    align-self: flex-start;
 
+.name-product {
+  /* align-self: flex-start; */
+  font-size: 22px;
+  /* margin-top: 10px; */
+  font-weight: 700;
+  /* color: orange; */
 }
-.container-card__detail-product button{
-  width: 80%;
+.price-product {
+  /* align-self: flex-start;
+    font-size: 24px; */
+  color: orange;
+}
+/* .short-description__product{
+    align-self: flex-start;
+} */
+.detailed-description {
+  font-size: 18px;
+  
+}
+
+
+@media (min-width: 580px) {
+  .container-btn-buy {
+    width: 40%;
+  }
 }

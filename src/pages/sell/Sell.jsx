@@ -15,7 +15,8 @@ const Sell = () => {
 
   const [formData, setFormData] = useState({
     name: "",
-    description: "",
+    shortDescription: "",
+    detailedDescription:"",
     price: "",
     file:""
   });
@@ -65,7 +66,17 @@ const Sell = () => {
   //   readData()
   // }, [])
   
-
+//   function ValidaLongitud(campo, longitudMaxima) {
+  
+// }
+   const setDataAndValidaInput = (e) => {
+  
+      if (e.length > (10))
+          return false;
+      else
+          return true;             
+ 
+   }
 
   return (
     <div className="container-sell">
@@ -86,16 +97,46 @@ const Sell = () => {
               }
             ></Input>
           </div>
+
           <div className="fielset-sell">
-            <label className="fieldset-label">Descripción</label>
+            <label className="fieldset-label">Breve descripción</label>
+            <i class=""></i>
+            <Input longitudMaxima="10"
+              type="text"
+              className="fieldset-input"
+              name="short-description"
+              placeholder="Ej.:Marca, tipo, material, año"
+              
+              onChange={(e) =>
+                setFormData({ ...formData, shortDescription: e.target.value }, setDataAndValidaInput(e.target.value))
+                
+              }
+            ></Input>
+          </div>
+          
+          <div className="fielset-sell">
+            <label className="fieldset-label">Descripción detallada</label>
             <i class=""></i>
             <Input
               type="text"
               className="fieldset-input"
-              name="description"
+              name="detailed-description"
               placeholder="Ej.:Celular Samsung Galaxy s9 64gb Negro"
               onChange={(e) =>
-                setFormData({ ...formData, description: e.target.value })
+                setFormData({ ...formData, detailedDescription: e.target.value })
+              }
+            ></Input>
+          </div>
+          <div className=" fielset-sell">
+            <label className="fieldset-label">Color</label>
+            <i class=""></i>
+            <Input
+              type="text"
+              className="fieldset-input"
+              name="color"
+              placeholder=" "
+              onChange={(e) =>
+                setFormData({ ...formData, name: e.target.value })
               }
             ></Input>
           </div>

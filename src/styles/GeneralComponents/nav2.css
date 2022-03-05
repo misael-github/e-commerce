@@ -1,0 +1,16 @@
+.container-nav{
+    display: flex;
+    margin-top: 20px;
+}
+/* .ul_categorys--nav{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+} */
+.li__categorys--nav{
+}
+/* .items__ul--categorys--nav{
+    text-decoration: none;
+    color: black;
+    
+} */

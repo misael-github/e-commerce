@@ -1,7 +1,7 @@
 import "../../styles/GeneralComponents/header.css";
 import { Link } from "react-router-dom";
 import SearchInput from "../GeneralComponents/Search"
-
+import Nav from "./Nav";
 // import { BiMenu } from "react-icons/bi";
 import Button from "./Button";
 import { useState } from "react";
@@ -94,14 +94,7 @@ const Header = () => {
             {/* <Link to=""> */}
               <details className="details">
                 <summary>Categorias</summary>
-                <ul className="ul__categorys">
-                  <li className="li__categorys"><Link to="/" className="items__ul--categorys">Vehiculos</Link></li>
-                  <li className="li__categorys"><Link to="/" className="items__ul--categorys">Inmuebles</Link></li>
-                  <li className="li__categorys"><Link to="/" className="items__ul--categorys">Electrodomésticos</Link></li>
-                  <li className="li__categorys"><Link to="/" className="items__ul--categorys">Construcción</Link></li>
-                  <li className="li__categorys"><Link to="/" className="items__ul--categorys" >Tecnologia</Link></li>
-                  <li className="li__categorys"><Link to="/" className="items__ul--categorys">Ropa</Link></li>
-                </ul>
+               <Nav></Nav>
               </details>
             {/* </Link> */}
           </div>

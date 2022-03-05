@@ -7,36 +7,50 @@ import Button from "../../components/GeneralComponents/Button";
 const ProductDetail = () => {
   const { productId } = useParams();
 
-   const [productdetail, setProductproductdetail] = useState({})
+  const [productdetail, setProductproductdetail] = useState({});
   // console.log(productId)
   useEffect(() => {
     const productsRef = db.firestore().collection("products").doc(productId);
     productsRef
       .get()
       .then((res) => {
-        console.log(res.data());
-       
-        const data = res.data()
-        setProductproductdetail(data)
-        
-    })
-    .catch((error) => {
+        const data = res.data();
+        setProductproductdetail(data);
+        console.log(data);
+      })
+      .catch((error) => {
         console.log(error);
-    });
-}, []);
+      });
+  }, []);
 
-// console.log(productdetail)
-// console.log(Object.keys(productdetail))
+  const Buy = () => {
+    
+  }
+
+  // console.log(productdetail)
+  // console.log(Object.keys(productdetail))
   return (
     <div>
       <Header />
       <div className="container-card__detail-product ">
         <img src={productdetail.file} alt="" />
-        <h2 className="name-product">{productdetail.name}</h2>
-         <p className="price-product">{productdetail.price}</p>
-         <p className="description-product">{productdetail.description}</p> 
+        <div className="info-container">
+          <h1 className="name-product">{productdetail.name}</h1>
+          {/* .charAt().toUpperCase() + productdetail.name.slice(1) me da error */}
+          <h2 className="price-product">${productdetail.price}</h2>
+          <p className="short-description__product">
+            {productdetail.shortDescription}
+          </p>
+          <p className="detailed-description">Descripción:</p>
+          <p className="detailed-description">
+            {productdetail.detailedDescription}
+          </p>
+          <p className="">Medios de Pago: Mercado Pago o Whatsapp</p>
+          <Button title="Comprar" className="btn__detail-product" onClick={Buy} ></Button>
+        </div>
+        {/* <div className="container-btn-buy"> */}
+        {/* </div> */}
       </div>
-     <Button title="Comprar"></Button>
     </div>
   );
 };

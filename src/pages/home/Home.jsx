@@ -1,18 +1,15 @@
 import Header from "../../components/GeneralComponents/Header";
-import "../../styles/home.css";
+import "../../styles/GeneralComponents/slidesShow.css";
 // import { useSelector } from "react-redux";
 import SectionPoducts from "../../components/GeneralComponents/SectionProducts";
-// import {
-//   SlideShow,
-//   Slide,
-//   TextoSlide,
-// } from "../../generalComponents/components/SlidesShow";
+import Nav from "../../components/GeneralComponents/Nav"
+import { SlideShow, Slide, TextoSlide, Titulo } from "../../components/GeneralComponents/SlidesShow";
 import "../../styles/home.css";
-// import styled from "styled-components";
-// import img1 from "../../assets/1.jpg";
-// import img2 from "../../assets/2.jpg";
-// import img3 from "../../assets/3.jpg";
-// import img4 from "../../assets/4.jpg";
+import styled from "styled-components";
+import img1 from "../../assets/1.jpg";
+import img2 from "../../assets/2.jpg";
+import img3 from "../../assets/3.jpg";
+import img4 from "../../assets/4.jpg";
 
 const HomePage = () => {
  
@@ -21,36 +18,36 @@ const HomePage = () => {
       <Header></Header>
       {/* <Nav category="Vehiculos"></Nav> */}
       <main className="main-container__slideShow">
-        {/* <Titulo>Productos destacados</Titulo> */}
-        {/* <SlideShow controls = {true} autoplay= {true} velocidad = {2000} interval={2000}>
+         {/* <Titulo>Productos destacados</Titulo>  */}
+         {/* <SlideShow controls = {true} autoplay= {true} velocidad = {2000} interval={2000}>
             <Slide>
               <a href="https://www.google.com"></a>
-              <img src={img1} alt="" /> */}
+              <img src={img1} alt="" />  */}
+               {/* <TextoSlide>
+                <p>15% de descuento en productos Apple</p>
+              </TextoSlide> */}
+             {/* </Slide>
+            <Slide>
+              <a href="https://www.google.com"></a>
+              <img src={img2} alt="" />  */}
               {/* <TextoSlide>
                 <p>15% de descuento en productos Apple</p>
               </TextoSlide> */}
-            {/* </Slide>
+             {/* </Slide>
             <Slide>
               <a href="https://www.google.com"></a>
-              <img src={img2} alt="" /> */}
+              <img src={img3} alt="" />  */}
               {/* <TextoSlide>
                 <p>15% de descuento en productos Apple</p>
-              </TextoSlide> */}
-            {/* </Slide>
-            <Slide>
-              <a href="https://www.google.com"></a>
-              <img src={img3} alt="" /> */}
-              {/* <TextoSlide>
-                <p>15% de descuento en productos Apple</p>
-              </TextoSlide> */}
-            {/* </Slide>
+              </TextoSlide>  */}
+             {/* </Slide>
             <Slide>
               <a href="https://www.google.com"></a>
               <img src={img4} alt="" /> */}
               {/* <TextoSlide>
                 <p>15% de descuento en productos Apple</p>
-              </TextoSlide> */}
-            {/* </Slide>
+              </TextoSlide>  */}
+             {/* </Slide>
     
         </SlideShow> */}
       </main>

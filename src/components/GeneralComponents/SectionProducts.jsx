@@ -32,17 +32,17 @@ const SectionPoducts = () => {
   
   return (
     <div className="container-section-products">
-        
+
     {
       products.map((p) =>(
-        
         <Card
+
                key = {p.id}
-               name={p.name.charAt(0).toUpperCase() + p.name.slice(1)}
+               name={p.name.charAt(0).toUpperCase() + p.name.slice(1)} // charAt devuelve el caractér de una cadena y slice elimina lo que le indico y crea un array con todo lo demás
                price={p.price}
                ubication=""
                img={p.file}
-               description={p.description.charAt(0).toUpperCase() + p.description.slice(1)}
+               shortDescription={p.shortDescription.charAt(0).toUpperCase() + p.shortDescription.slice(1)}
                id = {p.id}
              />
       ))
