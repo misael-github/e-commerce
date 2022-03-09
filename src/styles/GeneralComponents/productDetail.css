@@ -49,26 +49,28 @@
 }
 
 .name-product {
-  /* align-self: flex-start; */
   font-size: 22px;
-  /* margin-top: 10px; */
   font-weight: 700;
-  /* color: orange; */
 }
 .price-product {
-  /* align-self: flex-start;
-    font-size: 24px; */
   color: orange;
 }
-/* .short-description__product{
-    align-self: flex-start;
-} */
+
 .detailed-description {
-  font-size: 18px;
-  
+  font-size: 16px;
+  margin: 5px 0 0 0 ;
 }
-
-
+.select-color{
+  width: 100%;
+  padding: 5px;
+  border-radius: 6px;
+  height: 30px;
+  background-color: rgb(225 225 225);
+  border: none;
+}
+.select-color:focus{
+  outline: none;
+}
 @media (min-width: 580px) {
   .container-btn-buy {
     width: 40%;

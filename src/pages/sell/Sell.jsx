@@ -17,6 +17,7 @@ const Sell = () => {
     name: "",
     shortDescription: "",
     detailedDescription:"",
+    color:"",
     price: "",
     file:""
   });
@@ -134,7 +135,7 @@ const Sell = () => {
               name="color"
               placeholder=" "
               onChange={(e) =>
-                setFormData({ ...formData, name: e.target.value })
+                setFormData({ ...formData, color: e.target.value })
               }
             ></Input>
           </div>
@@ -161,7 +162,7 @@ const Sell = () => {
           </ul>
           <div className="container-btn-login">
             <Button
-              title="CONTINUAR"
+              title="PUBLICAR"
               type="submit"
               onClick={upLoadProduct}
             ></Button>

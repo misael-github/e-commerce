@@ -45,7 +45,10 @@ const ProductDetail = () => {
           <p className="detailed-description">
             {productdetail.detailedDescription}
           </p>
-          <p className="">Medios de Pago: Mercado Pago o Whatsapp</p>
+          <p>Elegir el color:</p>
+          <select name="select" id="" className="select-color">
+            <option value="">{productdetail.color}</option></select>
+          <p className="">Medios de Pago: Mercado Pago | Whatsapp</p>
           <Button title="Comprar" className="btn__detail-product" onClick={Buy} ></Button>
         </div>
         {/* <div className="container-btn-buy"> */}
