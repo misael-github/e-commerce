@@ -24,9 +24,7 @@ const Header = () => {
     console.log(user);
     db.auth().signOut();
   };
-  const saludar = () => {
-    console.log("hola");
-  };
+
   return (
     <header className="container-header">
       <nav className="nav-header">
@@ -106,7 +104,7 @@ const Header = () => {
           </div>
           <div className="ul__container--items">
             <BiSupport  size="30px" className="ul__icons"/>
-            <Link to="">
+            <Link to="https://api.whatsapp.com/send?phone=+5491157485829&text=Hola!%20Vi%20tu%20pagina%20y%20estoy%20interesado/a%20en%20comprar%20un%20colch%C3%B3n">
               <li className="list_items">Ayuda</li>
             </Link>
           </div>

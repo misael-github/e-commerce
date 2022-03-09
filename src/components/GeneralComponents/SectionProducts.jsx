@@ -12,17 +12,22 @@ const SectionPoducts = () => {
   useEffect(() => {
     try {
       // onSnapshot es para que este escuchando todo el tiempo los cambios sino seria .get().then((querySnapshot))
-      db.firestore()
-      .collection("products") // colection products
-      .onSnapshot((querySnapshot) => { 
+      const productsRef = db.firestore().collection("products")
+
+      productsRef.onSnapshot((snap) => { 
           const productsList = []
-          querySnapshot.forEach((doc) => {
-            let data = doc.data() // Creo una var data y le asigno la toda la data que traigo de la db. (la db me trae la data en formato objeto)
-            data.id = doc.id  // Creo la prop id en el objeto data y le doy el valor de doc.id
-            // console.log(data)
-            productsList.push(data) // A el array de objetos le agrego data. Me da un warning
+          snap.forEach((doc) => {
+            productsList.push({
+            id:doc.id,
+            ...doc.data()
+            })
+            // let data = doc.data() // Creo una var data y le asigno la toda la data que traigo de la db. (la db me trae la data en formato objeto)
+            // data.id = doc.id  // Creo la prop id en el objeto data y le doy el valor de doc.id
+            // // console.log(data)
+            // productsList.push(data) // A el array de objetos le agrego data. Me da un warning
             
           });
+          console.log(productsList)
           setProducts(productsList);
         });
       } catch (e) {

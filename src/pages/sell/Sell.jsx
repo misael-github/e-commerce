@@ -27,28 +27,26 @@ const Sell = () => {
     const archivoPath =  storageRef.child(archivo.name)
     await archivoPath.put(archivo) // Inserto el archivo
     console.log("archivo cargado: ", archivo.name)
-    const url = await archivoPath.getDownloadURL() // Obtengo la url
+    const url = await  archivoPath.getDownloadURL() // Obtengo la url
     await setFormData({...formData, file: url})
    
-    console.log(formData.file)
   }
+  // console.log(formData.file)
   const upLoadProduct = async (e) => {
-    // Creo una collection con el nombre que quiero y un doc con la info que tiene el state
+    // Hago referencia a la collection products (si no existe la crea) y le añado lo que tengo en el state y el id del usuario
     try {
       e.preventDefault();
-      const productsCollectionRef = await db.firestore().collection("products")
-      const user = db.auth().currentUser; // Obtengo el userId
+      const productsCollectionRef =  db.firestore().collection("products")
+       const user =  db.auth().currentUser; // Obtengo el userId
       Swal.fire({
         title:"Cargando...",
         // confirmButtonText:"",
         showConfirmButton:false,
-
       })
       await productsCollectionRef.add({ ...formData, userId: user.uid  })
         Swal.fire({
           icon:"success",
           title: "¡Producto cargado exitosamente!",
-       
       })
     
     } catch (error) {
